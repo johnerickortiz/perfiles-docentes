@@ -1,0 +1,14 @@
+# Archivos temporales del sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Archivos temporales de Office/Excel (bloqueo al tener el archivo abierto)
+~$*.xlsx
+~$*.xls
+
+# Editores
+*.swp
+*.swo
+
+# data/, CLAUDE.md, tools/ y el Excel de datos SÍ se versionan (ver CLAUDE.md)

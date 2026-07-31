@@ -1,0 +1,115 @@
+[
+  {
+    "id": "proy-01-01",
+    "docenteId": "docente-01",
+    "titulo": "Sistema de recomendación para bibliotecas universitarias",
+    "estado": "finalizado",
+    "fechaInicio": "2023-08",
+    "fechaFin": "2024-06",
+    "tipo": "desarrollo",
+    "area": "Ingeniería de Software",
+    "eje": "Construcción y Evolución de Software"
+  },
+  {
+    "id": "proy-01-02",
+    "docenteId": "docente-01",
+    "titulo": "Análisis de deserción estudiantil con aprendizaje automático",
+    "estado": "finalizado",
+    "fechaInicio": "2022-08",
+    "fechaFin": "2023-06",
+    "tipo": "investigacion",
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Data Science (Analítica de datos)"
+  },
+  {
+    "id": "proy-01-03",
+    "docenteId": "docente-01",
+    "titulo": "Automatización de pruebas de regresión para sistemas académicos",
+    "estado": "finalizado",
+    "fechaInicio": "2022-01",
+    "fechaFin": "2022-11",
+    "tipo": "desarrollo",
+    "area": "Ingeniería de Software",
+    "eje": "Calidad del Software y Pruebas"
+  },
+  {
+    "id": "proy-01-04",
+    "docenteId": "docente-01",
+    "titulo": "Panel de indicadores de deserción por facultad",
+    "estado": "finalizado",
+    "fechaInicio": "2021-02",
+    "fechaFin": "2021-10",
+    "tipo": "desarrollo"
+  },
+  {
+    "id": "proy-01-05",
+    "docenteId": "docente-01",
+    "titulo": "Modelo de recomendación de electivas",
+    "estado": "finalizado",
+    "fechaInicio": "2020-08",
+    "fechaFin": "2021-01",
+    "tipo": "investigacion",
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Machine Learning (Aprendizaje automático)"
+  },
+  {
+    "id": "proy-01-06",
+    "docenteId": "docente-01",
+    "titulo": "Plataforma de mentoría entre pares para proyectos de grado",
+    "estado": "activo",
+    "fechaInicio": "2025-08",
+    "tipo": "desarrollo",
+    "area": "Ingeniería de Software",
+    "eje": "Diseño y Arquitectura de Software"
+  },
+  {
+    "id": "proy-01-07",
+    "docenteId": "docente-01",
+    "titulo": "Predicción temprana de riesgo académico (piloto)",
+    "estado": "activo",
+    "fechaInicio": "2025-02",
+    "tipo": "investigacion",
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Machine Learning (Aprendizaje automático)"
+  },
+  {
+    "id": "proy-01-08",
+    "docenteId": "docente-01",
+    "titulo": "Métricas automatizadas de calidad de código en proyectos de grado",
+    "estado": "activo",
+    "fechaInicio": "2024-09",
+    "tipo": "desarrollo",
+    "area": "Ingeniería de Software",
+    "eje": "Calidad del Software y Pruebas"
+  },
+  {
+    "id": "proy-01-09",
+    "docenteId": "docente-01",
+    "titulo": "Asistente conversacional para consultas de biblioteca",
+    "estado": "activo",
+    "fechaInicio": "2024-03",
+    "tipo": "desarrollo"
+  },
+  {
+    "id": "proy-02-01",
+    "docenteId": "docente-02",
+    "titulo": "Detección de intrusiones en redes IoT domésticas",
+    "estado": "finalizado",
+    "fechaInicio": "2024-02",
+    "fechaFin": "2025-01",
+    "tipo": "investigacion",
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "Ciberseguridad"
+  },
+  {
+    "id": "proy-02-02",
+    "docenteId": "docente-02",
+    "titulo": "Diagnóstico de seguridad perimetral para la red institucional",
+    "estado": "finalizado",
+    "fechaInicio": "2022-06",
+    "fechaFin": "2022-12",
+    "tipo": "desarrollo",
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "Seguridad de la información"
+  }
+]

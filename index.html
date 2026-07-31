@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Directorio de docentes e ideas de investigación · Ingeniería de Sistemas UMariana</title>
+  <meta name="description" content="Directorio de docentes y base de ideas de investigación del programa de Ingeniería de Sistemas de la Universidad Mariana." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado-contenido">
+      <p class="encabezado-eyebrow">Ingeniería de Sistemas · Universidad Mariana</p>
+      <h1>Directorio de docentes e ideas de investigación</h1>
+      <p class="encabezado-descripcion">
+        Encuentra un docente asesor y una idea de investigación para tu propuesta de proyecto de grado.
+      </p>
+    </div>
+  </header>
+
+  <nav class="navegacion" role="tablist" aria-label="Vistas del sitio">
+    <button id="nav-directorio" class="navegacion-boton activo" role="tab" aria-selected="true">
+      Directorio de docentes
+    </button>
+    <button id="nav-ideas" class="navegacion-boton" role="tab" aria-selected="false">
+      Base de ideas
+    </button>
+  </nav>
+
+  <main class="contenedor">
+    <section id="vista-directorio" aria-labelledby="nav-directorio">
+      <div class="barra-filtros">
+        <label for="filtro-area">Área temática</label>
+        <select id="filtro-area" data-poblado="false">
+          <option value="">Todas las áreas</option>
+        </select>
+
+        <label for="filtro-eje">Eje temático</label>
+        <select id="filtro-eje" disabled>
+          <option value="">Todos los ejes</option>
+        </select>
+      </div>
+
+      <div id="grid-docentes" class="grid grid-docentes">
+        <p class="mensaje-vacio">Cargando docentes…</p>
+      </div>
+    </section>
+
+    <section id="vista-ideas" hidden aria-labelledby="nav-ideas">
+      <div class="barra-filtros">
+        <label for="filtro-area-ideas">Área temática</label>
+        <select id="filtro-area-ideas" data-poblado="false">
+          <option value="">Todas las áreas</option>
+        </select>
+
+        <label for="filtro-eje-ideas">Eje temático</label>
+        <select id="filtro-eje-ideas" disabled>
+          <option value="">Todos los ejes</option>
+        </select>
+
+        <label for="filtro-origen">Origen</label>
+        <select id="filtro-origen">
+          <option value="">Todos los orígenes</option>
+          <option value="docente">Docente</option>
+          <option value="externa">Externa</option>
+        </select>
+
+        <label for="buscador-ideas" class="visualmente-oculto">Buscar idea</label>
+        <input
+          type="search"
+          id="buscador-ideas"
+          class="buscador"
+          placeholder="Buscar por título o descripción…"
+        />
+      </div>
+
+      <div id="grid-ideas" class="grid grid-ideas">
+        <p class="mensaje-vacio">Cargando ideas…</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-caja" role="dialog" aria-modal="true">
+      <div class="modal-caja-header">
+        <button id="modal-cerrar" class="modal-cerrar" aria-label="Cerrar perfil">&times;</button>
+      </div>
+      <div id="modal-contenido" class="modal-caja-body"></div>
+    </div>
+  </div>
+
+  <div id="modal-proyectos" class="modal" aria-hidden="true">
+    <div class="modal-caja" role="dialog" aria-modal="true">
+      <div class="modal-caja-header modal-caja-header-proyectos">
+        <button id="proyectos-volver" class="boton-volver">← Volver al perfil</button>
+        <button id="proyectos-cerrar" class="modal-cerrar" aria-label="Cerrar">&times;</button>
+      </div>
+      <div id="proyectos-contenido" class="modal-caja-body"></div>
+    </div>
+  </div>
+
+  <footer class="pie">
+    <p>Comité de investigación del programa · Ingeniería de Sistemas · Universidad Mariana</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

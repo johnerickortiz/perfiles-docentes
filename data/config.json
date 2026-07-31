@@ -1,0 +1,46 @@
+{
+  "linea": "Ingeniería, Informática y Computación",
+  "areas": [
+    {
+      "nombre": "Ingeniería de Software",
+      "ejes": [
+        "Ingeniería de Requisitos y Sistemas Sociotécnicos",
+        "Diseño y Arquitectura de Software",
+        "Construcción y Evolución de Software",
+        "Calidad del Software y Pruebas",
+        "Operaciones y DevOps",
+        "Medición, Métricas y Productividad en Software",
+        "Ingeniería de Software y Sistemas Inteligentes (IA)"
+      ]
+    },
+    {
+      "nombre": "Inteligencia Artificial y Ciencia de Datos",
+      "ejes": [
+        "Machine Learning (Aprendizaje automático)",
+        "Computer Vision (Visión por computadora)",
+        "Cognitive Computing (Sistemas cognitivos)",
+        "Data Science (Analítica de datos)",
+        "Knowledge Discovery (Descubrimiento de conocimiento)"
+      ]
+    },
+    {
+      "nombre": "Bioinformática y Modelamiento Computacional",
+      "ejes": [
+        "Modelamiento de sistemas biológicos",
+        "Aplicaciones biomédicas",
+        "Modelamiento físico y matemático (Física computacional)"
+      ]
+    },
+    {
+      "nombre": "Tecnologías de la Información y Educación en Computación",
+      "ejes": [
+        "Redes y telecomunicaciones",
+        "Ciberseguridad",
+        "IoT (Internet de las Cosas)",
+        "Seguridad de la información",
+        "TIC aplicadas a la educación",
+        "Gestión de sistemas de información"
+      ]
+    }
+  ]
+}

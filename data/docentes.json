@@ -1,0 +1,76 @@
+[
+  {
+    "id": "docente-01",
+    "nombre": "María Fernanda Rosero Paz",
+    "titulos": [
+      "Ingeniera de Sistemas",
+      "Magíster en Ingeniería de Software"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": ["Construcción y Evolución de Software", "Calidad del Software y Pruebas"]
+      },
+      {
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "ejes": ["Data Science (Analítica de datos)", "Machine Learning (Aprendizaje automático)"]
+      }
+    ],
+    "ideasInvestigacion": [
+      {
+        "id": "idea-01-01",
+        "titulo": "Predicción temprana de riesgo académico",
+        "descripcion": "Modelo de aprendizaje automático para identificar estudiantes en riesgo de deserción a partir de datos académicos y socioeconómicos históricos.",
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "eje": "Machine Learning (Aprendizaje automático)",
+        "ejesSecundarios": ["Data Science (Analítica de datos)"],
+        "objetivos": [
+          "Recopilar y limpiar el histórico académico institucional",
+          "Entrenar y validar un modelo predictivo de riesgo",
+          "Diseñar un tablero de alertas tempranas para bienestar universitario"
+        ]
+      },
+      {
+        "id": "idea-01-02",
+        "titulo": "Métricas automatizadas de calidad de código en proyectos de grado",
+        "descripcion": "Herramienta que analiza repositorios de proyectos de grado y genera reporte de calidad de código como apoyo a la evaluación.",
+        "area": "Ingeniería de Software",
+        "eje": "Calidad del Software y Pruebas",
+        "ejesSecundarios": ["Medición, Métricas y Productividad en Software"],
+        "objetivos": []
+      }
+    ],
+    "contacto": "mfrosero@umariana.edu.co"
+  },
+  {
+    "id": "docente-02",
+    "nombre": "Carlos Andrés Benavides Ortega",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Especialista en Seguridad Informática",
+      "Magíster en Ciberseguridad"
+    ],
+    "areas": [
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": ["Ciberseguridad", "Redes y telecomunicaciones", "Seguridad de la información"]
+      }
+    ],
+    "ideasInvestigacion": [
+      {
+        "id": "idea-02-01",
+        "titulo": "Framework de evaluación de vulnerabilidades para PYMES",
+        "descripcion": "Propuesta de un framework ligero y de bajo costo para que pequeñas y medianas empresas de la región evalúen su exposición a riesgos de ciberseguridad.",
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "eje": "Ciberseguridad",
+        "ejesSecundarios": ["Seguridad de la información"],
+        "objetivos": [
+          "Caracterizar las vulnerabilidades más comunes en PYMES de Pasto",
+          "Diseñar una metodología de evaluación adaptada a bajo presupuesto",
+          "Validar el framework con al menos tres empresas piloto"
+        ]
+      }
+    ],
+    "contacto": "cabenavides@umariana.edu.co"
+  }
+]

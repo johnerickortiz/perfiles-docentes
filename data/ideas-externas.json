@@ -1,0 +1,13 @@
+[
+  {
+    "id": "idea-ext-01",
+    "titulo": "Plataforma de trazabilidad para la cadena de frío del sector lácteo nariñense",
+    "descripcion": "Sistema de monitoreo con sensores IoT y visualización web para garantizar la cadena de frío en el transporte y almacenamiento de productos lácteos de pequeños productores de Nariño.",
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "IoT (Internet de las Cosas)",
+    "ejesSecundarios": [],
+    "objetivos": [],
+    "fuente": "Comité de investigación del programa",
+    "contactoReferencia": "Coordinación de Ingeniería de Sistemas"
+  }
+]
