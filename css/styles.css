@@ -133,6 +133,21 @@ body {
   cursor: not-allowed;
 }
 
+@media (max-width: 640px) {
+  .barra-filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .barra-filtros select,
+  .barra-filtros .buscador {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* Grids y tarjetas */
 
 .grid {
