@@ -1,76 +1,348 @@
 [
   {
     "id": "docente-01",
-    "nombre": "María Fernanda Rosero Paz",
+    "nombre": "Madeline Daniela Narváez Muñoz",
     "titulos": [
       "Ingeniera de Sistemas",
-      "Magíster en Ingeniería de Software"
-    ],
-    "areas": [
-      {
-        "area": "Ingeniería de Software",
-        "ejes": ["Construcción y Evolución de Software", "Calidad del Software y Pruebas"]
-      },
-      {
-        "area": "Inteligencia Artificial y Ciencia de Datos",
-        "ejes": ["Data Science (Analítica de datos)", "Machine Learning (Aprendizaje automático)"]
-      }
-    ],
-    "ideasInvestigacion": [
-      {
-        "id": "idea-01-01",
-        "titulo": "Predicción temprana de riesgo académico",
-        "descripcion": "Modelo de aprendizaje automático para identificar estudiantes en riesgo de deserción a partir de datos académicos y socioeconómicos históricos.",
-        "area": "Inteligencia Artificial y Ciencia de Datos",
-        "eje": "Machine Learning (Aprendizaje automático)",
-        "ejesSecundarios": ["Data Science (Analítica de datos)"],
-        "objetivos": [
-          "Recopilar y limpiar el histórico académico institucional",
-          "Entrenar y validar un modelo predictivo de riesgo",
-          "Diseñar un tablero de alertas tempranas para bienestar universitario"
-        ]
-      },
-      {
-        "id": "idea-01-02",
-        "titulo": "Métricas automatizadas de calidad de código en proyectos de grado",
-        "descripcion": "Herramienta que analiza repositorios de proyectos de grado y genera reporte de calidad de código como apoyo a la evaluación.",
-        "area": "Ingeniería de Software",
-        "eje": "Calidad del Software y Pruebas",
-        "ejesSecundarios": ["Medición, Métricas y Productividad en Software"],
-        "objetivos": []
-      }
-    ],
-    "contacto": "mfrosero@umariana.edu.co"
-  },
-  {
-    "id": "docente-02",
-    "nombre": "Carlos Andrés Benavides Ortega",
-    "titulos": [
-      "Ingeniero de Sistemas",
-      "Especialista en Seguridad Informática",
       "Magíster en Ciberseguridad"
     ],
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
-        "ejes": ["Ciberseguridad", "Redes y telecomunicaciones", "Seguridad de la información"]
+        "ejes": [
+          "Ciberseguridad",
+          "Seguridad de la información"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "dirisistemas@umariana.edu.co"
+  },
+  {
+    "id": "docente-02",
+    "nombre": "Danny Michael Cardenas Martínez",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Magíster en Administración y Competitividad"
+    ],
+    "areas": [
+      {
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "ejes": [
+          "Data Science (Analítica de datos)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "dacardenas@umariana.edu.co"
+  },
+  {
+    "id": "docente-03",
+    "nombre": "Diego Alejandro Narváez Meza",
+    "titulos": [
+      "Ingeniero Mecánico",
+      "Magíster en Docencia Universitaria"
+    ],
+    "areas": [
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": [
+          "IoT (Internet de las Cosas)",
+          "TIC aplicadas a la educación"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "dienarvaez125@umariana.edu.co"
+  },
+  {
+    "id": "docente-04",
+    "nombre": "Einstein Brezhnev Castro Rosero",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Especialista en Redes y Servicios Telemáticos"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Construcción y Evolución de Software"
+        ]
+      },
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": [
+          "Redes y telecomunicaciones"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "eincastro225@umariana.edu.co"
+  },
+  {
+    "id": "docente-05",
+    "nombre": "Fabian Parra Pay",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Especialista en Docencia Universitaria",
+      "Magíster en Dirección Estratégica con Tecnologías de la Información"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Construcción y Evolución de Software",
+          "Ingeniería de Software y Sistemas Inteligentes (IA)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "fparra@umariana.edu.co"
+  },
+  {
+    "id": "docente-06",
+    "nombre": "Favio Nicolas Rosero Rodríguez",
+    "titulos": [
+      "Ingeniero Físico",
+      "Magíster en Ciencias - Física"
+    ],
+    "areas": [
+      {
+        "area": "Bioinformática y Modelamiento Computacional",
+        "ejes": [
+          "Modelamiento físico y matemático (Física computacional)"
+        ]
+      },
+      {
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "ejes": [
+          "Data Science (Analítica de datos)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "favionrosero@umariana.edu.co"
+  },
+  {
+    "id": "docente-07",
+    "nombre": "Giovanni Albeiro Hernández Pantoja",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Especialista en Gerencia Informática",
+      "Magíster en Docencia Universitaria"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Diseño y Arquitectura de Software",
+          "Construcción y Evolución de Software",
+          "Medición, Métricas y Productividad en Software"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "gihernandez@umariana.edu.co"
+  },
+  {
+    "id": "docente-08",
+    "nombre": "Javier Mauricio López Moreno",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Magíster en Docencia Universitaria"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Ingeniería de Software y Sistemas Inteligentes (IA)"
+        ]
+      },
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": [
+          "TIC aplicadas a la educación",
+          "Gestión de sistemas de información"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "javierm.lopez221@umariana.edu.co"
+  },
+  {
+    "id": "docente-09",
+    "nombre": "John Erick Ortíz Guzmán",
+    "titulos": [
+      "Ingeniero Electrónico",
+      "Doctor en Ingeniería Eléctrica"
+    ],
+    "areas": [
+      {
+        "area": "Bioinformática y Modelamiento Computacional",
+        "ejes": [
+          "Modelamiento de sistemas biológicos",
+          "Modelamiento físico y matemático (Física computacional)",
+          "Aplicaciones biomédicas"
+        ]
       }
     ],
     "ideasInvestigacion": [
       {
-        "id": "idea-02-01",
-        "titulo": "Framework de evaluación de vulnerabilidades para PYMES",
-        "descripcion": "Propuesta de un framework ligero y de bajo costo para que pequeñas y medianas empresas de la región evalúen su exposición a riesgos de ciberseguridad.",
+        "id": "idea-001",
+        "titulo": "Soluciones de BCI para pacientes con movilidad reducida",
+        "descripcion": "Generar soluciones de interfaces humano-computador controladas por el cerebro",
+        "area": "Bioinformática y Modelamiento Computacional",
+        "eje": "Aplicaciones biomédicas",
+        "ejesSecundarios": [],
+        "objetivos": []
+      }
+    ],
+    "contacto": "johortiz223@umariana.edu.co"
+  },
+  {
+    "id": "docente-10",
+    "nombre": "Juan Carlos Portilla Salas",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Especialista en Gerencia de Proyectos para la Construcción de Software",
+      "Magíster en Pedagogía"
+    ],
+    "areas": [
+      {
         "area": "Tecnologías de la Información y Educación en Computación",
-        "eje": "Ciberseguridad",
-        "ejesSecundarios": ["Seguridad de la información"],
-        "objetivos": [
-          "Caracterizar las vulnerabilidades más comunes en PYMES de Pasto",
-          "Diseñar una metodología de evaluación adaptada a bajo presupuesto",
-          "Validar el framework con al menos tres empresas piloto"
+        "ejes": [
+          "TIC aplicadas a la educación"
         ]
       }
     ],
-    "contacto": "cabenavides@umariana.edu.co"
+    "ideasInvestigacion": [],
+    "contacto": "juanca.portilla@umariana.edu.co"
+  },
+  {
+    "id": "docente-11",
+    "nombre": "Lilian Dayana Cruz Cruz",
+    "titulos": [
+      "Doctora en Ingeniería Telemática"
+    ],
+    "areas": [
+      {
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "ejes": [
+          "Machine Learning (Aprendizaje automático)",
+          "Computer Vision (Visión por computadora)",
+          "Data Science (Analítica de datos)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "lilcruz225@umariana.edu.co"
+  },
+  {
+    "id": "docente-12",
+    "nombre": "Luis Gabriel Lafaurie Ponce",
+    "titulos": [
+      "Ingeniero Físico",
+      "Bioingeniero",
+      "Magíster en Ingeniería Química"
+    ],
+    "areas": [
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": [
+          "IoT (Internet de las Cosas)"
+        ]
+      },
+      {
+        "area": "Bioinformática y Modelamiento Computacional",
+        "ejes": [
+          "Modelamiento físico y matemático (Física computacional)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "luisga.lafaurie@umariana.edu.co"
+  },
+  {
+    "id": "docente-13",
+    "nombre": "Paola Fernanda López Recalde",
+    "titulos": [
+      "Ingeniera de Sistemas",
+      "Especialista en Ciencia de Datos y Analítica"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Construcción y Evolución de Software"
+        ]
+      },
+      {
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "ejes": [
+          "Machine Learning (Aprendizaje automático)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "paolopez126@umariana.edu.co"
+  },
+  {
+    "id": "docente-14",
+    "nombre": "Silvia Alejandra Molina España",
+    "titulos": [
+      "Ingeniera Electrónica",
+      "Magíster en Computación"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Ingeniería de Software y Sistemas Inteligentes (IA)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "silmolina226@umariana.edu.co"
+  },
+  {
+    "id": "docente-15",
+    "nombre": "Wilson Andrés Castillo Castro",
+    "titulos": [
+      "Ingeniero de Sistemas",
+      "Magíster en Ingeniería Computacional"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Construcción y Evolución de Software"
+        ]
+      },
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": [
+          "TIC aplicadas a la educación"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "wilcastilloc124@umariana.edu.co"
+  },
+  {
+    "id": "docente-16",
+    "nombre": "Omar Jose Ortega Moreno",
+    "titulos": [
+      "Ingeniero de Sistemas"
+    ],
+    "areas": [
+      {
+        "area": "Ingeniería de Software",
+        "ejes": [
+          "Construcción y Evolución de Software"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "omaortega226@umariana.edu.co"
   }
 ]

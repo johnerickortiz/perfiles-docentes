@@ -1,13 +1,13 @@
 [
   {
-    "id": "idea-ext-01",
-    "titulo": "Plataforma de trazabilidad para la cadena de frío del sector lácteo nariñense",
-    "descripcion": "Sistema de monitoreo con sensores IoT y visualización web para garantizar la cadena de frío en el transporte y almacenamiento de productos lácteos de pequeños productores de Nariño.",
-    "area": "Tecnologías de la Información y Educación en Computación",
-    "eje": "IoT (Internet de las Cosas)",
+    "id": "idea-ext-001",
+    "titulo": "Prototipo tecnológico para el seguimiento funcional y prevención de lesiones deportivas",
+    "descripcion": "Desarrollo de un prototipo tecnológico que permita registrar, monitorear y analizar variables relacionadas con el riesgo de lesiones deportivas, adherencia a programas preventivos, percepción de dolor, fatiga y resultados de pruebas funcionales aplicadas en fisioterapia deportivas",
+    "area": "Bioinformática y Modelamiento Computacional",
+    "eje": "Aplicaciones biomédicas",
     "ejesSecundarios": [],
     "objetivos": [],
-    "fuente": "Comité de investigación del programa",
-    "contactoReferencia": "Coordinación de Ingeniería de Sistemas"
+    "fuente": "Estudiante de Fisioterapia",
+    "contactoReferencia": "Profesor Procesos de investigación 1"
   }
 ]

@@ -11,4 +11,8 @@ desktop.ini
 *.swp
 *.swo
 
+# Fotos originales sin procesar de docentes (se conservan localmente para
+# poder reprocesar el recorte sin volver a descargar; no van al repositorio)
+img/_originales/
+
 # data/, CLAUDE.md, tools/ y el Excel de datos SÍ se versionan (ver CLAUDE.md)
