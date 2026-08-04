@@ -10,6 +10,7 @@ Lee 'perfiles_docentes_datos.xlsx' y genera los cuatro archivos JSON en data/:
 
 Uso:
     python tools/excel_to_json.py [ruta_al_excel] [carpeta_data_salida]
+    python tools/excel_to_json.py D:\\ClaudeCodeFolders\\perfiles-docentes\\tools\\perfiles_docentes_datos.xlsx D:\\ClaudeCodeFolders\\perfiles-docentes\\data
 
 Por defecto:
     excel  = perfiles_docentes_datos.xlsx  (junto a este script o en el cwd)
