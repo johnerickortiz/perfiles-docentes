@@ -77,7 +77,39 @@
         ]
       }
     ],
-    "ideasInvestigacion": [],
+    "ideasInvestigacion": [
+      {
+        "id": "idea-002",
+        "titulo": "Requisitos Participativos para Infraestructura Comunitaria",
+        "descripcion": "Diseñar, construir y validar una plataforma de ingeniería de requisitos colaborativa que permita capturar, priorizar y hacer seguimiento a necesidades reales de varias comunidades, evaluando su efectividad frente a métodos tradicionales de recolección de requisitos.",
+        "area": "Ingeniería de Software",
+        "eje": "Ingeniería de Requisitos y Sistemas Sociotécnicos",
+        "ejesSecundarios": [],
+        "objetivos": []
+      },
+      {
+        "id": "idea-003",
+        "titulo": "Diagnóstico de Redes Asistido por GenIA sobre Infraestructura CISCO",
+        "descripcion": "Diseñar, construir y validar un asistente de diagnóstico de red basado en IA generativa, integrado con el ecosistema CISCO, que reduzca el tiempo de resolución de incidentes de red en instituciones con soporte técnico limitado.",
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "eje": "Redes y telecomunicaciones",
+        "ejesSecundarios": [
+          "Ciberseguridad"
+        ],
+        "objetivos": []
+      },
+      {
+        "id": "idea-003",
+        "titulo": "Plataforma de Autoevaluación y Gestión de Cumplimiento ISO/IEC 27001/27002 para PYMES",
+        "descripcion": "Diseñar, construir y validar una plataforma de autoevaluación de cumplimiento alineada a ISO/IEC 27002 que permita a pequeñas y medianas organizaciones identificar brechas de seguridad y generar un plan de remediación priorizado.",
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "eje": "Ciberseguridad",
+        "ejesSecundarios": [
+          "Seguridad de la información"
+        ],
+        "objetivos": []
+      }
+    ],
     "contacto": "eincastro225@umariana.edu.co"
   },
   {
