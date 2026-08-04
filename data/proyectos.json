@@ -574,16 +574,6 @@
   {
     "id": "proy-0055",
     "docenteId": "docente-07",
-    "titulo": "Sistema Web turístico para el municipio de Sandoná, Nariño",
-    "estado": "activo",
-    "fechaInicio": null,
-    "tipo": "desarrollo",
-    "area": "Ingeniería de Software",
-    "eje": "Construcción y Evolución de Software"
-  },
-  {
-    "id": "proy-0056",
-    "docenteId": "docente-07",
     "titulo": "MULTIFUNCIONALIDAD DE EQUIPO EN EL DESARROLLO ÁGIL DE SOFTWARE",
     "estado": "finalizado",
     "fechaInicio": "2020-06",
@@ -593,7 +583,7 @@
     "eje": "Medición, Métricas y Productividad en Software"
   },
   {
-    "id": "proy-0057",
+    "id": "proy-0056",
     "docenteId": "docente-07",
     "titulo": "PROPUESTA DE FÁBRICA DE APRENDIZAJE PARA EL ÁREA DE INGENIERÍA DE SOFTWARE",
     "estado": "finalizado",
@@ -604,7 +594,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0058",
+    "id": "proy-0057",
     "docenteId": "docente-07",
     "titulo": "Métricas de seguridad web en el desarrollo ágil de software para las empresas de la industria de software en Pasto",
     "estado": "finalizado",
@@ -615,7 +605,7 @@
     "eje": "Medición, Métricas y Productividad en Software"
   },
   {
-    "id": "proy-0059",
+    "id": "proy-0058",
     "docenteId": "docente-07",
     "titulo": "Visual Projects: prototipo de aplicativo web que permite la planificación, gestión, monitoreo, evaluación y control de proyectos haciendo uso de las buenas prácticas PMI",
     "estado": "finalizado",
@@ -626,7 +616,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0060",
+    "id": "proy-0059",
     "docenteId": "docente-07",
     "titulo": "Fortalecimiento del proceso de recopilación de requerimientos, mediante el uso de historias de usuario, en la formación de los estudiantes de Ingeniería de Sistemas de la Universidad Mariana",
     "estado": "activo",
@@ -636,7 +626,7 @@
     "eje": "Ingeniería de Requisitos y Sistemas Sociotécnicos"
   },
   {
-    "id": "proy-0061",
+    "id": "proy-0060",
     "docenteId": "docente-07",
     "titulo": "ECOBIKE: Aplicación de motivación para el uso de bicicletas",
     "estado": "finalizado",
@@ -647,7 +637,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0062",
+    "id": "proy-0061",
     "docenteId": "docente-07",
     "titulo": "Sistema de apoyo a la toma de decisiones para el retorno a la presencialidad durante la pandemia del COVID 19",
     "estado": "finalizado",
@@ -658,7 +648,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0063",
+    "id": "proy-0062",
     "docenteId": "docente-07",
     "titulo": "Pruebas automáticas de seguridad en desarrollo ágil de software",
     "estado": "finalizado",
@@ -669,7 +659,7 @@
     "eje": "Calidad del Software y Pruebas"
   },
   {
-    "id": "proy-0064",
+    "id": "proy-0063",
     "docenteId": "docente-07",
     "titulo": "Prácticas De Un Arquitecto De Software En Un Equipo SCRUM",
     "estado": "finalizado",
@@ -680,7 +670,7 @@
     "eje": "Diseño y Arquitectura de Software"
   },
   {
-    "id": "proy-0065",
+    "id": "proy-0064",
     "docenteId": "docente-07",
     "titulo": "DE LAS PRUEBAS MANUALES A LAS AUTOMÁTICAS DESDE ASD EN EL ÁREA DE TECNOLOGÍA DE LA UNIVERSIDAD MARIANA",
     "estado": "finalizado",
@@ -691,7 +681,7 @@
     "eje": "Calidad del Software y Pruebas"
   },
   {
-    "id": "proy-0066",
+    "id": "proy-0065",
     "docenteId": "docente-07",
     "titulo": "Estrategia de Gamificación desde ASD, como innovación tecnológica en la humanización de la atención a pacientes con cáncer",
     "estado": "finalizado",
@@ -702,7 +692,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0067",
+    "id": "proy-0066",
     "docenteId": "docente-07",
     "titulo": "Desarrollo de un sistema computacional que soporte el proceso de compra y venta para las pequeñas empresas",
     "estado": "finalizado",
@@ -713,7 +703,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0068",
+    "id": "proy-0067",
     "docenteId": "docente-07",
     "titulo": "Aplicación móvil que permite fortalecer las redes de comercialización de los productores de tomate de carne del municipio de Albán del departamento de Nariño ( App Tomaticos)",
     "estado": "finalizado",
@@ -724,7 +714,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0069",
+    "id": "proy-0068",
     "docenteId": "docente-07",
     "titulo": "Aplicativo móvil que contribuya en la salud musculoesquelética de los empleados de EMAS BY VEOILIA",
     "estado": "finalizado",
@@ -735,7 +725,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0070",
+    "id": "proy-0069",
     "docenteId": "docente-07",
     "titulo": "Aplicación para la adquisición y clasificación de sonidos cardiacos en la detección de valvulopatías (ACSC-App)",
     "estado": "finalizado",
@@ -746,7 +736,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0071",
+    "id": "proy-0070",
     "docenteId": "docente-07",
     "titulo": "AQuMaS Plataforma orientada al monitoreo de la calidad del aire en la Universidad Mariana",
     "estado": "finalizado",
@@ -757,7 +747,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0072",
+    "id": "proy-0071",
     "docenteId": "docente-07",
     "titulo": "Estrategia tecnológica para mitigar los efectos del uso excesivo del celular en estudiantes de Ingeniería de Sistemas de la Universidad Mariana.",
     "estado": "activo",
@@ -767,7 +757,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0073",
+    "id": "proy-0072",
     "docenteId": "docente-07",
     "titulo": "Digitalización del Instrumento EVA-SENSORIAL para la Evaluación de la Actividad y Participación en Niños con Desórdenes en el Procesamiento Sensorial",
     "estado": "activo",
@@ -777,7 +767,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0074",
+    "id": "proy-0073",
     "docenteId": "docente-07",
     "titulo": "Medición de Productividad de Equipos Ágiles Mediante Inteligencia Artificial Generativa",
     "estado": "activo",
@@ -787,7 +777,7 @@
     "eje": "Medición, Métricas y Productividad en Software"
   },
   {
-    "id": "proy-0075",
+    "id": "proy-0074",
     "docenteId": "docente-08",
     "titulo": "Automatización del proceso de prestamo de las aulas de informática de la Universidad Mariana",
     "estado": "finalizado",
@@ -798,7 +788,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0076",
+    "id": "proy-0075",
     "docenteId": "docente-08",
     "titulo": "Fortalecimiento de la movilidad del gremio tractocamion a través de un aplicativo movil en el municipio de San Juan de Pasto",
     "estado": "finalizado",
@@ -809,7 +799,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0077",
+    "id": "proy-0076",
     "docenteId": "docente-08",
     "titulo": "Pensamiento lógico computacional para niños de la comunidad indígena: Aldea de María Putisnan, ubicada en el municipio de Contadero - Nariño. Basada en una estrategia tecnológica.",
     "estado": "finalizado",
@@ -820,7 +810,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0078",
+    "id": "proy-0077",
     "docenteId": "docente-08",
     "titulo": "Estrategia tecnológica para la gestión de la información del Encuentro Institucional de Semilleros de Invesigación de la Universidad Mariana.",
     "estado": "activo",
@@ -830,7 +820,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0079",
+    "id": "proy-0078",
     "docenteId": "docente-08",
     "titulo": "Prototipo de plataforma digital para la gestión integral del servicio social obligatorio en instituciones educativas de San Juan de Pasto",
     "estado": "activo",
@@ -840,7 +830,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0080",
+    "id": "proy-0079",
     "docenteId": "docente-08",
     "titulo": "Desarrollo de un sistema inteligente que fomenta hábitos saludables y reducción el sedentarismo en trabajadores de oficina y estudiantes",
     "estado": "activo",
@@ -850,7 +840,7 @@
     "eje": "Ingeniería de Software y Sistemas Inteligentes (IA)"
   },
   {
-    "id": "proy-0081",
+    "id": "proy-0080",
     "docenteId": "docente-08",
     "titulo": "Aplicación móvil para optimización de reservas deportivas y promoción de actividad física en Pasto",
     "estado": "activo",
@@ -860,7 +850,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0082",
+    "id": "proy-0081",
     "docenteId": "docente-08",
     "titulo": "Estrategia de gamificación digital para el fortalecimiento de los hábitos alimentarios saludables en escolares del municipio de Pasto.",
     "estado": "activo",
@@ -870,7 +860,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0083",
+    "id": "proy-0082",
     "docenteId": "docente-09",
     "titulo": "Estrategias de gamificación para la enseñanza de electrónica digital en estudiantes de quinto\ngrado de la Institución Educativa Normal Superior Pio XII de Pupiales",
     "estado": "activo",
@@ -880,7 +870,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0084",
+    "id": "proy-0083",
     "docenteId": "docente-09",
     "titulo": "Estrategia computacional para el apoyo de los procesos relacionados con la gestión de biblioteca del colegio Liceo de la Merced Maridiaz",
     "estado": "finalizado",
@@ -891,7 +881,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0085",
+    "id": "proy-0084",
     "docenteId": "docente-09",
     "titulo": "Estudio de viabilidad sobre la realidad aumentada en los laboratorios de física de las\ninstituciones educativas de básica secundaria en la ciudad de Pasto- Nariño",
     "estado": "activo",
@@ -901,7 +891,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0086",
+    "id": "proy-0085",
     "docenteId": "docente-09",
     "titulo": "Implementación de un entorno de trabajo computacional para el modelamiento del problema directo del Electrocardiograma",
     "estado": "activo",
@@ -911,7 +901,7 @@
     "eje": "Modelamiento de sistemas biológicos"
   },
   {
-    "id": "proy-0087",
+    "id": "proy-0086",
     "docenteId": "docente-09",
     "titulo": "Modelamiento de la perturbación del centro de masas en sistemas estelares a través de métodos numéricos.",
     "estado": "activo",
@@ -921,7 +911,7 @@
     "eje": "Modelamiento físico y matemático (Física computacional)"
   },
   {
-    "id": "proy-0088",
+    "id": "proy-0087",
     "docenteId": "docente-09",
     "titulo": "Sistema computacional para la ayuda en la detección temprana de pacientes con espectro del trastorno autista en la ciudad de Pasto- Nariño",
     "estado": "activo",
@@ -931,7 +921,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0089",
+    "id": "proy-0088",
     "docenteId": "docente-09",
     "titulo": "Modelo de adquisición, gestión y etiquetado de imágenes para el entrenamiento de modelos de Machine Learning y Deep Learning.",
     "estado": "activo",
@@ -941,7 +931,7 @@
     "eje": "Computer Vision (Visión por computadora)"
   },
   {
-    "id": "proy-0090",
+    "id": "proy-0089",
     "docenteId": "docente-10",
     "titulo": "Tecnología de asistencia para apoyar la movilidad de personas con discapacidad visual",
     "estado": "finalizado",
@@ -952,7 +942,7 @@
     "eje": "Ingeniería de Requisitos y Sistemas Sociotécnicos"
   },
   {
-    "id": "proy-0091",
+    "id": "proy-0090",
     "docenteId": "docente-10",
     "titulo": "Diagnóstico de las condiciones mínimas de la norma ISO 21001 en la IEM Santa Teresita",
     "estado": "activo",
@@ -962,7 +952,7 @@
     "eje": "Seguridad de la información"
   },
   {
-    "id": "proy-0092",
+    "id": "proy-0091",
     "docenteId": "docente-10",
     "titulo": "Sistema de información para la gestión de los laboratorios de la Universidad Mariana",
     "estado": "finalizado",
@@ -973,7 +963,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0093",
+    "id": "proy-0092",
     "docenteId": "docente-10",
     "titulo": "Barreras y desafíos de género en la industria del desarrollo de software",
     "estado": "finalizado",
@@ -984,7 +974,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0094",
+    "id": "proy-0093",
     "docenteId": "docente-10",
     "titulo": "Programa de estimulación cognitiva a través del uso de la tecnología para personas mayores ECAPP.",
     "estado": "finalizado",
@@ -995,7 +985,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0095",
+    "id": "proy-0094",
     "docenteId": "docente-10",
     "titulo": "Estrategia de concientización sobre la seguridad ciudadana en relación con el hurto basada en un sistema de mapeo colaborativo: caso de estudio Universidad Mariana",
     "estado": "activo",
@@ -1005,7 +995,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0096",
+    "id": "proy-0095",
     "docenteId": "docente-10",
     "titulo": "Sistema computacional para integrar saberes ancestrales y técnicas modernas en el cultivo de café en Yacuanquer",
     "estado": "activo",
@@ -1015,7 +1005,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0097",
+    "id": "proy-0096",
     "docenteId": "docente-10",
     "titulo": "Creación de un ambiente de aprendizaje personalizado y colaborativo soportado por tecnologias digitales para el desarrollo del pensamiento critico en estudiantes universitarios.",
     "estado": "activo",
@@ -1025,7 +1015,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0098",
+    "id": "proy-0097",
     "docenteId": "docente-10",
     "titulo": "Juego serio digital para fortalecer la comprensión pragmático-comunicativa y la identidad cultural en estudiantes de la lengua Inga de la Institución Educativa Agropecuaria Inga de Aponte",
     "estado": "activo",
@@ -1035,7 +1025,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0099",
+    "id": "proy-0098",
     "docenteId": "docente-11",
     "titulo": "NutriMariana: un enfoque predictivo basado en Machine Learning",
     "estado": "activo",
@@ -1045,7 +1035,7 @@
     "eje": "Machine Learning (Aprendizaje automático)"
   },
   {
-    "id": "proy-0100",
+    "id": "proy-0099",
     "docenteId": "docente-11",
     "titulo": "Prototipo y esquema de anotación parte-consciente, mediante detectores de piezas semánticas para la clasificación automática de macroinvertebrados como bioindicadores de calidad de agua",
     "estado": "activo",
@@ -1055,7 +1045,7 @@
     "eje": "Machine Learning (Aprendizaje automático)"
   },
   {
-    "id": "proy-0101",
+    "id": "proy-0100",
     "docenteId": "docente-11",
     "titulo": "Detección de rasgos morfológicos mediante redes neuronales para mejorar la carga tecnológica en el reconocimiento facial. Caso de estudio: registro de asistencia estudiantil para el programa de Ingeniería de Sistemas de la Universidad Mariana",
     "estado": "activo",
@@ -1065,7 +1055,7 @@
     "eje": "Computer Vision (Visión por computadora)"
   },
   {
-    "id": "proy-0102",
+    "id": "proy-0101",
     "docenteId": "docente-11",
     "titulo": "Marco operacional integrado mediante PRIMM, Parsons problems &amp; TDD con instrumentos de evaluación, para fortalecer el aprendizaje en los cursos iniciales de programación orientada a objetos (POO).",
     "estado": "activo",
@@ -1075,7 +1065,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0103",
+    "id": "proy-0102",
     "docenteId": "docente-11",
     "titulo": "Inspección de enfermedades en hojas de café asistida por inteligencia artificial mediante detectores de piezas semánticas.",
     "estado": "activo",
@@ -1085,7 +1075,7 @@
     "eje": "Computer Vision (Visión por computadora)"
   },
   {
-    "id": "proy-0104",
+    "id": "proy-0103",
     "docenteId": "docente-12",
     "titulo": "Modelo de integración de herramientas de Inteligencia Artificial Generativa (IAGen) para el apoyo a procesos de enseñanza de la física en las Instituciones de Educación media en Pasto.",
     "estado": "activo",
@@ -1095,7 +1085,7 @@
     "eje": "Machine Learning (Aprendizaje automático)"
   },
   {
-    "id": "proy-0105",
+    "id": "proy-0104",
     "docenteId": "docente-13",
     "titulo": "Desarrollo de una aplicación Web para optimizar la gestión de datos de pacientes con diagnosis de enfermedades respiratorias en la Unidad de Cuidados Intensivos del Centro Cardioneurovascular Pabón",
     "estado": "finalizado",
@@ -1106,7 +1096,7 @@
     "eje": "Aplicaciones biomédicas"
   },
   {
-    "id": "proy-0106",
+    "id": "proy-0105",
     "docenteId": "docente-13",
     "titulo": "Desarrollo de una plataforma web e-comerce para la optimización de los servicios de la empresa Cootranar de Pasto - Nariño",
     "estado": "activo",
@@ -1116,7 +1106,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0107",
+    "id": "proy-0106",
     "docenteId": "docente-13",
     "titulo": "Gestión de aulas para practicantes del laboratorio de enfermería",
     "estado": "activo",
@@ -1126,7 +1116,7 @@
     "eje": "Construcción y Evolución de Software"
   },
   {
-    "id": "proy-0108",
+    "id": "proy-0107",
     "docenteId": "docente-15",
     "titulo": "Conservación de activos de información basada en el lenguaje simbólico de los Indígenas Pastos en estudiantes de grado 4° y 5° de primaria de la Institución Educativa Genaro León del Municipio de Guachucal",
     "estado": "finalizado",
@@ -1137,7 +1127,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0109",
+    "id": "proy-0108",
     "docenteId": "docente-15",
     "titulo": "Estrategia de gamificación para el aprendizaje de las funciones de variable real en estudiantes del programa de Ingeniería de Sistemas de la Universidad Mariana",
     "estado": "activo",
@@ -1147,7 +1137,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0110",
+    "id": "proy-0109",
     "docenteId": "docente-15",
     "titulo": "Diseño de una Solución Computacional para Apoyar el Proceso de Seguimiento y Control Académico de los Estudiantes de Ingeniería de Sistemas en la Universidad Mariana de San Juan de Pasto",
     "estado": "finalizado",
@@ -1158,7 +1148,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0111",
+    "id": "proy-0110",
     "docenteId": "docente-15",
     "titulo": "H Sound: Prototipo de Aplicación Móvil para la Promoción del Talento Artístico Musical en Pasto - Nariño",
     "estado": "finalizado",
@@ -1169,7 +1159,7 @@
     "eje": "Gestión de sistemas de información"
   },
   {
-    "id": "proy-0112",
+    "id": "proy-0111",
     "docenteId": "docente-15",
     "titulo": "Impacto del uso de redes sociales en el sentimiento de soledad: Caso de estudio estudiantes de grados 8º, 9º y 10º del colegio Ciudad De Pasto del año 2024.",
     "estado": "activo",
@@ -1179,7 +1169,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0113",
+    "id": "proy-0112",
     "docenteId": "docente-15",
     "titulo": "Impacto de las TIC en el Fortalecimiento de Lectura Crítica de Pruebas Saber 11 en la Institución Educativa Municipal Mercedario de la Ciudad de Pasto",
     "estado": "finalizado",
@@ -1190,7 +1180,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0114",
+    "id": "proy-0113",
     "docenteId": "docente-15",
     "titulo": "Impacto de la Inteligencia Artificial Generativa en los Procesos de Enseñanza en Educación Media de la Institución Educativa Municipal Pedagógico de la Ciudad de Pasto",
     "estado": "activo",
@@ -1200,7 +1190,7 @@
     "eje": "TIC aplicadas a la educación"
   },
   {
-    "id": "proy-0115",
+    "id": "proy-0114",
     "docenteId": "docente-15",
     "titulo": "E-Lexis: Plataforma para diagnosticar problemas de escritura en niños usando técnicas de Machine Learning",
     "estado": "activo",
@@ -1210,7 +1200,7 @@
     "eje": "Machine Learning (Aprendizaje automático)"
   },
   {
-    "id": "proy-0116",
+    "id": "proy-0115",
     "docenteId": "docente-16",
     "titulo": "EduTime App: Aplicativo para la gestión automatizada del horario escolar de la Institución Educativa Las Mesas",
     "estado": "activo",
