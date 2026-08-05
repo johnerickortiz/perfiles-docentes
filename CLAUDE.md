@@ -46,6 +46,7 @@ solo cambia la capa de acceso a datos.
 ├── /data/
 │   ├── docentes.json
 │   ├── ideas-externas.json
+│   ├── ideas-tomadas.json
 │   └── proyectos.json
 ├── /img/
 │   └── docentes/          ← fotos nombradas por id: docente-01.jpg, etc.
@@ -98,6 +99,7 @@ por nombre exacto.
 {
   "id": "docente-01",
   "nombre": "Nombre Completo",
+  "rol": "Profesor",
   "titulos": ["Ingeniero de Sistemas", "Magíster en..."],
   "areas": [
     { "area": "Ingeniería de Software", "ejes": ["Construcción y Evolución de Software"] },
@@ -118,6 +120,11 @@ por nombre exacto.
 }
 ```
 
+- `rol`: `Profesor`, `Asistente` o `Director`. Si un docente no lo trae, se
+  asume `Profesor` (ver `data-service.js`). Determina, junto con
+  `proyectosActivos`, la disponibilidad del docente como asesor — ver
+  "Disponibilidad del docente" más abajo.
+
 ### Proyecto dirigido (data/proyectos.json — array de objetos)
 
 No vive dentro del docente: se une a su perfil por `docenteId` en tiempo de
@@ -129,7 +136,8 @@ render (mismo patrón JOIN que la base de ideas).
   "docenteId": "docente-01",
   "titulo": "Sistema de recomendación para bibliotecas universitarias",
   "estado": "finalizado",
-  "fechaInicio": "2023-08",
+  "fechaIdea": "2023-02",
+  "fechaPropuesta": "2023-08",
   "fechaFin": "2024-06",
   "tipo": "desarrollo",
   "area": "Ingeniería de Software",
@@ -137,19 +145,47 @@ render (mismo patrón JOIN que la base de ideas).
 }
 ```
 
-- `estado`: `activo` o `finalizado`.
-- `fechaInicio`/`fechaFin`: formato `AAAA-MM`. `fechaFin` es **obligatoria solo
-  si `estado` es `finalizado`**; un proyecto activo no la tiene.
-- `tipo`: `investigacion` o `desarrollo` (las dos modalidades).
+- `estado`: tres valores posibles, cada uno con más fechas que el anterior
+  (un proyecto avanza de una etapa a la siguiente, nunca se saltan fechas):
+  - `propuesta`: solo `fechaIdea`.
+  - `proyecto`: `fechaIdea` + `fechaPropuesta`, sin `fechaFin`.
+  - `finalizado`: las tres fechas — `fechaIdea`, `fechaPropuesta` y `fechaFin`.
+- Fechas en formato `AAAA-MM`. Cada proyecto incluye **solo** las fechas que
+  correspondan a su `estado` (no se rellenan las que aún no aplican). El
+  antiguo campo `fechaInicio` ya no existe: el arranque formal del proyecto
+  (lo que antes era `fechaInicio`) ahora es `fechaPropuesta`.
+- `tipo`: `investigacion` o `desarrollo` (las dos modalidades). Puede faltar
+  en un proyecto en etapa `propuesta`, cuando el tipo aún no está decidido.
 - `area`/`eje` son **opcionales**, pero van juntos (si se da uno se debe dar el
   otro) y, como en las ideas, deben existir literalmente en `config.json`.
 - En el perfil del docente se muestran por defecto solo los últimos 2
   finalizados (por `fechaFin` desc.) y los últimos 2 activos (por
-  `fechaInicio` desc.). Si hay más, un botón "Ver todos los proyectos" abre
+  `fechaPropuesta` desc.). Si hay más, un botón "Ver todos los proyectos" abre
   un modal aparte (con su propio botón "Volver al perfil" y su X de cerrar)
   que lista TODOS los proyectos del docente, agrupados por estado con el
   mismo orden. Un estado sin proyectos se indica con un texto discreto en
   vez de ocultar la sección.
+
+### Disponibilidad del docente (derivada, no se guarda)
+
+No vive en ningún JSON: `data-service.js` la calcula al vuelo cada vez que
+se piden docentes (`obtenerDocentes`), a partir del `rol` del docente y de
+sus proyectos NO finalizados (estado `propuesta` o `proyecto`). Cada docente
+sale de `obtenerDocentes`/`obtenerDocentePorId` con dos campos calculados:
+
+- `proyectosActivos`: cuántos de sus proyectos están en `propuesta` o `proyecto`.
+- `disponible`: `true`/`false`, según esta regla por `rol`:
+  - **Director**: SIEMPRE `false` (no disponible), sin importar el conteo —
+    el motivo es estructural (dedicación a la coordinación del programa), no
+    de cupo.
+  - **Profesor**: `false` (no disponible) con **5 o más** `proyectosActivos`.
+  - **Asistente**: `false` (no disponible) con **4 o más** `proyectosActivos`
+    (umbral más bajo que Profesor por su menor dedicación al programa).
+
+En el directorio, los docentes disponibles se listan primero y los no
+disponibles después; dentro de cada grupo se conserva el orden original (por
+`id`). Las tarjetas no disponibles siguen siendo completamente clickeables —
+la disponibilidad es solo informativa, nunca deshabilita el perfil.
 
 ### Idea externa (data/ideas-externas.json — array de objetos)
 
@@ -166,6 +202,26 @@ render (mismo patrón JOIN que la base de ideas).
   "contactoReferencia": "quién puede dar más info"
 }
 ```
+
+### Ideas tomadas (data/ideas-tomadas.json — objeto único)
+
+Registra qué ideas de investigación ya fueron tomadas por un grupo de
+estudiantes. Es una vista independiente que solo referencia ids — no vive
+dentro de la idea ni la duplica (mismo principio de normalización que el
+resto del esquema).
+
+```json
+{
+  "descripcion": "Lista de IDs de ideas de investigación ya tomadas por un grupo.",
+  "tomadas": ["idea-01-01", "idea-ext-01"]
+}
+```
+
+- `tomadas`: array de ids de ideas ya tomadas. Pueden ser ideas de docentes
+  (ej. `idea-01-01`, definidas dentro de `docentes.json`) o ideas externas
+  (ej. `idea-ext-01`, definidas en `ideas-externas.json`).
+- Para marcar una idea como tomada, agregar su id a `tomadas`; para
+  liberarla, quitarlo de la lista.
 
 ### Notas de esquema
 

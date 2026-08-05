@@ -10,7 +10,6 @@ Lee 'perfiles_docentes_datos.xlsx' y genera los cuatro archivos JSON en data/:
 
 Uso:
     python tools/excel_to_json.py [ruta_al_excel] [carpeta_data_salida]
-    python tools/excel_to_json.py D:\\ClaudeCodeFolders\\perfiles-docentes\\tools\\perfiles_docentes_datos.xlsx D:\\ClaudeCodeFolders\\perfiles-docentes\\data
 
 Por defecto:
     excel  = perfiles_docentes_datos.xlsx  (junto a este script o en el cwd)
@@ -184,10 +183,14 @@ def build(wb, area_to_ejes):
             errors.append(f"Docentes fila {r}: falta 'nombre'.")
         if did in docentes:
             errors.append(f"Docentes fila {r}: id duplicado {did!r}.")
+        rol = clean(row[4]) or "Profesor"   # columna E; por defecto Profesor
+        if rol not in ("Profesor", "Asistente", "Director"):
+            errors.append(f"Docentes fila {r}: rol inválido {rol!r} (debe ser 'Profesor', 'Asistente' o 'Director').")
         docentes[did] = {
             "id": did,
             "nombre": nombre,
             "titulos": split_list(row[2]),
+            "rol": rol,
             "areas": [],                 # se llena desde 'Areas docente'
             "ideasInvestigacion": [],    # se llena desde 'Ideas docentes'
             "contacto": clean(row[3]),
@@ -257,6 +260,8 @@ def build(wb, area_to_ejes):
             docentes[did]["ideasInvestigacion"].append(idea)
 
     # ---- Proyectos ----
+    # Columnas: 0 id | 1 docenteId | 2 titulo | 3 estado | 4 fechaIdea |
+    #           5 fechaPropuesta | 6 fechaFin | 7 tipo | 8 area | 9 eje
     ws = wb["Proyectos"]
     proyectos = []
     for r, row in data_rows(ws):
@@ -266,31 +271,47 @@ def build(wb, area_to_ejes):
         if did not in docentes:
             errors.append(f"{where}: docenteId {did!r} no existe en 'Docentes'.")
         estado = clean(row[3])
-        if estado not in ("activo", "finalizado"):
-            errors.append(f"{where}: estado inválido {estado!r} (debe ser 'activo' o 'finalizado').")
-        tipo = clean(row[6])
+        if estado not in ("propuesta", "proyecto", "finalizado"):
+            errors.append(f"{where}: estado inválido {estado!r} (debe ser 'propuesta', 'proyecto' o 'finalizado').")
+        tipo = clean(row[7])
         if tipo not in ("investigacion", "desarrollo", None):
             errors.append(f"{where}: tipo inválido {tipo!r} (debe ser 'investigacion' o 'desarrollo').")
-        area = clean(row[7])
-        eje = clean(row[8])
-        # area/eje opcionales en proyectos: validar solo si se proporcionan
+        area = clean(row[8])
+        eje = clean(row[9])
         if area or eje:
             check_area_eje(area, eje, where, eje_required=bool(eje) or bool(area))
+
+        fecha_idea = clean(row[4])
+        fecha_propuesta = clean(row[5])
+        fecha_fin = clean(row[6])
+
+        # Coherencia estado <-> fechas
+        if estado == "finalizado" and not fecha_fin:
+            errors.append(f"{where}: proyecto 'finalizado' sin 'fechaFin'.")
+        if estado == "proyecto":
+            if not fecha_propuesta:
+                errors.append(f"{where}: proyecto 'proyecto' sin 'fechaPropuesta'.")
+            if fecha_fin:
+                errors.append(f"{where}: proyecto 'proyecto' no debería tener 'fechaFin'.")
+        if estado == "propuesta":
+            if fecha_propuesta:
+                errors.append(f"{where}: proyecto 'propuesta' no debería tener 'fechaPropuesta'.")
+            if fecha_fin:
+                errors.append(f"{where}: proyecto 'propuesta' no debería tener 'fechaFin'.")
+
         proj = {
             "id": pid,
             "docenteId": did,
             "titulo": clean(row[2]),
             "estado": estado,
-            "fechaInicio": clean(row[4]),
         }
-        fecha_fin = clean(row[5])
-        if estado == "finalizado":
-            if not fecha_fin:
-                errors.append(f"{where}: proyecto finalizado sin 'fechaFin'.")
+        # Incluir solo las fechas presentes, en orden cronológico
+        if fecha_idea:
+            proj["fechaIdea"] = fecha_idea
+        if fecha_propuesta:
+            proj["fechaPropuesta"] = fecha_propuesta
+        if fecha_fin:
             proj["fechaFin"] = fecha_fin
-        else:
-            if fecha_fin:
-                errors.append(f"{where}: proyecto activo no debería tener 'fechaFin' ({fecha_fin!r}).")
         proj["tipo"] = tipo
         if area:
             proj["area"] = area

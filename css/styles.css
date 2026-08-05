@@ -133,6 +133,21 @@ body {
   cursor: not-allowed;
 }
 
+.filtro-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto-atenuado);
+  cursor: pointer;
+  user-select: none;
+}
+
+.filtro-toggle input {
+  cursor: pointer;
+}
+
 @media (max-width: 640px) {
   .barra-filtros {
     flex-direction: column;
@@ -145,6 +160,10 @@ body {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  .filtro-toggle {
+    width: 100%;
   }
 }
 
@@ -173,6 +192,49 @@ body {
 .tarjeta-docente:focus-visible {
   transform: translateY(-3px);
   outline: 2px solid var(--teal);
+}
+
+/*
+ * Docente sin cupo como asesor: tres señales combinadas, ninguna sobre el
+ * texto (que debe quedar perfectamente legible) — sigue siendo una tarjeta
+ * completamente funcional, solo distinguible como grupo al escanear el grid.
+ *   1. Franja de color a la izquierda + fondo con tinte ámbar muy sutil.
+ *   2. Insignia con ícono, con peso visual propio (ver .etiqueta-disponibilidad).
+ *   3. Solo la foto se atenúa/desatura (ver ".avatar img" más abajo).
+ */
+.tarjeta-docente-no-disponible {
+  border-left: 4px solid var(--naranja);
+  background: #FDF3E9;
+}
+
+.etiqueta-disponibilidad {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.4rem 0 0.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(232, 115, 12, 0.18);
+  color: #8A4300;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.etiqueta-disponibilidad-icono {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* Asistente: misma familia ámbar (cupo lleno), tono ligeramente distinto al de Profesor. */
+.etiqueta-disponibilidad-asistente {
+  background: rgba(26, 138, 143, 0.16);
+  color: #0F5559;
+}
+
+/* Director: azul institucional — el motivo no es de cupo sino estructural (rol). */
+.etiqueta-disponibilidad-director {
+  background: rgba(27, 58, 107, 0.14);
+  color: var(--azul);
 }
 
 .tarjeta-titulo {
@@ -224,6 +286,11 @@ body {
   border-radius: 50%;
   object-fit: cover;
   display: block;
+}
+
+/* Docente sin cupo: solo la foto se atenúa/desatura, nunca el texto. */
+.tarjeta-docente-no-disponible .avatar img {
+  filter: grayscale(65%) opacity(0.7);
 }
 
 .avatar-iniciales {
@@ -284,13 +351,23 @@ body {
   color: var(--azul);
 }
 
-.etiqueta-estado-activo {
+.etiqueta-estado-proyecto {
   background: rgba(26, 138, 143, 0.15);
   color: var(--teal);
 }
 
+.etiqueta-estado-propuesta {
+  background: rgba(232, 115, 12, 0.15);
+  color: var(--naranja);
+}
+
 .etiqueta-estado-finalizado {
   background: var(--fondo-claro);
+  color: var(--texto-atenuado);
+}
+
+.etiqueta-tomada {
+  background: rgba(91, 107, 121, 0.15);
   color: var(--texto-atenuado);
 }
 
@@ -523,6 +600,13 @@ body {
 
 .boton-ver-mas:hover {
   background: rgba(26, 138, 143, 0.1);
+}
+
+/* Idea ya tomada por un grupo: atenuada pero íntegra (título, descripción,
+   objetivos y etiquetas siguen visibles). */
+.idea-tomada,
+.tarjeta-idea-tomada {
+  opacity: 0.62;
 }
 
 .idea h4 {

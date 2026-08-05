@@ -10,16 +10,30 @@
 const RUTAS = {
   docentes: 'data/docentes.json',
   ideasExternas: 'data/ideas-externas.json',
+  ideasTomadas: 'data/ideas-tomadas.json',
   proyectos: 'data/proyectos.json',
   config: 'data/config.json'
 };
 
-const ESTADOS_PROYECTO = ['activo', 'finalizado'];
+const ESTADOS_PROYECTO = ['propuesta', 'proyecto', 'finalizado'];
 const TIPOS_PROYECTO = ['investigacion', 'desarrollo'];
+
+// Rol del docente en el programa; si no viene en los datos, se asume "Profesor".
+const ROL_POR_DEFECTO = 'Profesor';
+
+// Umbral de proyectos no finalizados (propuesta o proyecto) a partir del cual
+// un Profesor o Asistente se considera NO disponible como asesor. Un
+// Director está SIEMPRE no disponible, sin importar su conteo (ver
+// `calcularDisponibilidad`), por eso no tiene entrada aquí.
+const UMBRAL_NO_DISPONIBLE_POR_ROL = {
+  Profesor: 5,
+  Asistente: 4
+};
 
 // Caché en memoria para no repetir peticiones dentro de la misma sesión.
 let cacheDocentes = null;
 let cacheIdeasExternas = null;
+let cacheIdsIdeasTomadas = null;
 let cacheProyectos = null;
 let cacheConfig = null;
 let cacheIndiceTaxonomia = null;
@@ -45,6 +59,38 @@ async function obtenerIndiceTaxonomia() {
     );
   }
   return cacheIndiceTaxonomia;
+}
+
+/**
+ * ids de ideas ya tomadas (data/ideas-tomadas.json), como Set para lookup O(1).
+ * Puramente derivado hacia afuera: se usa para anotar cada idea con "tomada",
+ * nunca se expone la lista cruda.
+ */
+async function obtenerIdsIdeasTomadas() {
+  if (!cacheIdsIdeasTomadas) {
+    const datos = await cargarJSON(RUTAS.ideasTomadas);
+    cacheIdsIdeasTomadas = new Set(datos.tomadas ?? []);
+  }
+  return cacheIdsIdeasTomadas;
+}
+
+/** Cuenta los proyectos de un docente que aún no han finalizado (propuesta o proyecto). */
+function contarProyectosNoFinalizados(proyectos, docenteId) {
+  return proyectos.filter((p) => p.docenteId === docenteId && p.estado !== 'finalizado').length;
+}
+
+/**
+ * Disponibilidad de un docente como asesor, derivada de su rol y de sus
+ * proyectos no finalizados:
+ *   - Director: SIEMPRE no disponible, sin importar el conteo.
+ *   - Profesor / Asistente: no disponible al llegar a su umbral respectivo
+ *     (ver `UMBRAL_NO_DISPONIBLE_POR_ROL`).
+ * No se guarda en ningún dato; se recalcula cada vez que se piden docentes.
+ */
+function calcularDisponibilidad(rol, proyectosNoFinalizados) {
+  if (rol === 'Director') return false;
+  const umbral = UMBRAL_NO_DISPONIBLE_POR_ROL[rol] ?? UMBRAL_NO_DISPONIBLE_POR_ROL.Profesor;
+  return proyectosNoFinalizados < umbral;
 }
 
 function validarAreasDeDocente(areas, indiceTaxonomia, contextoDocente) {
@@ -120,7 +166,7 @@ function validarIdea(idea, indiceTaxonomia, camposExtra = []) {
  * en las ideas). `fechaFin` es obligatoria solo cuando el proyecto ya finalizó.
  */
 function validarProyecto(proyecto, indiceTaxonomia) {
-  const camposRequeridos = ['id', 'docenteId', 'titulo', 'estado', 'fechaInicio', 'tipo'];
+  const camposRequeridos = ['id', 'docenteId', 'titulo', 'estado', 'fechaIdea'];
   const faltantes = camposRequeridos.filter((campo) => !(campo in proyecto));
   if (faltantes.length > 0) {
     console.warn(`Proyecto inválido (faltan campos ${faltantes.join(', ')}):`, proyecto);
@@ -130,7 +176,9 @@ function validarProyecto(proyecto, indiceTaxonomia) {
     console.warn(`Proyecto inválido: estado "${proyecto.estado}" debe ser uno de [${ESTADOS_PROYECTO.join(', ')}].`, proyecto);
     return false;
   }
-  if (!TIPOS_PROYECTO.includes(proyecto.tipo)) {
+  // "tipo" puede faltar en etapa temprana (propuesta, o un "proyecto" cuyo
+  // tipo aún no se decidió); si viene, sí debe ser uno de los válidos.
+  if (proyecto.tipo != null && !TIPOS_PROYECTO.includes(proyecto.tipo)) {
     console.warn(`Proyecto inválido: tipo "${proyecto.tipo}" debe ser uno de [${TIPOS_PROYECTO.join(', ')}].`, proyecto);
     return false;
   }
@@ -160,19 +208,38 @@ function validarProyecto(proyecto, indiceTaxonomia) {
   return true;
 }
 
-/** Devuelve todos los docentes, ya validados contra la taxonomía de config.json. */
+/**
+ * Devuelve todos los docentes, ya validados contra la taxonomía de config.json,
+ * con dos campos derivados (no vienen en docentes.json, se calculan aquí):
+ *   - `proyectosActivos`: cuántos de sus proyectos NO están finalizados.
+ *   - `disponible`: según su `rol` y `proyectosActivos` (ver `calcularDisponibilidad`).
+ * `rol` se normaliza a `ROL_POR_DEFECTO` si el docente no lo trae. Cada idea
+ * de investigación del docente también viene anotada con `tomada` (ver
+ * `obtenerIdsIdeasTomadas`).
+ */
 export async function obtenerDocentes() {
   if (!cacheDocentes) {
-    const [datos, indiceTaxonomia] = await Promise.all([
+    const [datos, indiceTaxonomia, proyectos, idsIdeasTomadas] = await Promise.all([
       cargarJSON(RUTAS.docentes),
-      obtenerIndiceTaxonomia()
+      obtenerIndiceTaxonomia(),
+      obtenerProyectos(),
+      obtenerIdsIdeasTomadas()
     ]);
     cacheDocentes = datos
       .filter((docente) => validarDocente(docente, indiceTaxonomia))
-      .map((docente) => ({
-        ...docente,
-        ideasInvestigacion: (docente.ideasInvestigacion ?? []).filter((idea) => validarIdea(idea, indiceTaxonomia))
-      }));
+      .map((docente) => {
+        const rol = docente.rol ?? ROL_POR_DEFECTO;
+        const proyectosActivos = contarProyectosNoFinalizados(proyectos, docente.id);
+        return {
+          ...docente,
+          rol,
+          ideasInvestigacion: (docente.ideasInvestigacion ?? [])
+            .filter((idea) => validarIdea(idea, indiceTaxonomia))
+            .map((idea) => ({ ...idea, tomada: idsIdeasTomadas.has(idea.id) })),
+          proyectosActivos,
+          disponible: calcularDisponibilidad(rol, proyectosActivos)
+        };
+      });
   }
   return cacheDocentes;
 }
@@ -183,14 +250,17 @@ export async function obtenerDocentePorId(id) {
   return docentes.find((docente) => docente.id === id);
 }
 
-/** Devuelve las ideas externas (no asociadas a un docente), ya validadas. */
+/** Devuelve las ideas externas (no asociadas a un docente), ya validadas y con `tomada` derivado. */
 export async function obtenerIdeasExternas() {
   if (!cacheIdeasExternas) {
-    const [datos, indiceTaxonomia] = await Promise.all([
+    const [datos, indiceTaxonomia, idsIdeasTomadas] = await Promise.all([
       cargarJSON(RUTAS.ideasExternas),
-      obtenerIndiceTaxonomia()
+      obtenerIndiceTaxonomia(),
+      obtenerIdsIdeasTomadas()
     ]);
-    cacheIdeasExternas = datos.filter((idea) => validarIdea(idea, indiceTaxonomia, ['fuente']));
+    cacheIdeasExternas = datos
+      .filter((idea) => validarIdea(idea, indiceTaxonomia, ['fuente']))
+      .map((idea) => ({ ...idea, tomada: idsIdeasTomadas.has(idea.id) }));
   }
   return cacheIdeasExternas;
 }

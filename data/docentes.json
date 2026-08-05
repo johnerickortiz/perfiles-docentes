@@ -6,6 +6,7 @@
       "Ingeniera de Sistemas",
       "Magíster en Ciberseguridad"
     ],
+    "rol": "Director",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -25,6 +26,7 @@
       "Ingeniero de Sistemas",
       "Magíster en Administración y Competitividad"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Inteligencia Artificial y Ciencia de Datos",
@@ -43,6 +45,7 @@
       "Ingeniero Mecánico",
       "Magíster en Docencia Universitaria"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -62,6 +65,7 @@
       "Ingeniero de Sistemas",
       "Especialista en Redes y Servicios Telemáticos"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -120,6 +124,7 @@
       "Especialista en Docencia Universitaria",
       "Magíster en Dirección Estratégica con Tecnologías de la Información"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -139,6 +144,7 @@
       "Ingeniero Físico",
       "Magíster en Ciencias - Física"
     ],
+    "rol": "Asistente",
     "areas": [
       {
         "area": "Bioinformática y Modelamiento Computacional",
@@ -164,6 +170,7 @@
       "Especialista en Gerencia Informática",
       "Magíster en Docencia Universitaria"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -184,6 +191,7 @@
       "Ingeniero de Sistemas",
       "Magíster en Docencia Universitaria"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -209,6 +217,7 @@
       "Ingeniero Electrónico",
       "Doctor en Ingeniería Eléctrica"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Bioinformática y Modelamiento Computacional",
@@ -240,6 +249,7 @@
       "Especialista en Gerencia de Proyectos para la Construcción de Software",
       "Magíster en Pedagogía"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -257,6 +267,7 @@
     "titulos": [
       "Doctora en Ingeniería Telemática"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Inteligencia Artificial y Ciencia de Datos",
@@ -278,6 +289,7 @@
       "Bioingeniero",
       "Magíster en Ingeniería Química"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -302,6 +314,7 @@
       "Ingeniera de Sistemas",
       "Especialista en Ciencia de Datos y Analítica"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -326,6 +339,7 @@
       "Ingeniera Electrónica",
       "Magíster en Computación"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -344,6 +358,7 @@
       "Ingeniero de Sistemas",
       "Magíster en Ingeniería Computacional"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -367,6 +382,7 @@
     "titulos": [
       "Ingeniero de Sistemas"
     ],
+    "rol": "Profesor",
     "areas": [
       {
         "area": "Ingeniería de Software",

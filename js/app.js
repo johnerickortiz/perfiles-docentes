@@ -22,6 +22,7 @@ const el = {
   filtroEjeIdeas: document.getElementById('filtro-eje-ideas'),
   filtroOrigen: document.getElementById('filtro-origen'),
   buscadorIdeas: document.getElementById('buscador-ideas'),
+  filtroSinTomadas: document.getElementById('filtro-sin-tomadas'),
   modal: document.getElementById('modal'),
   modalContenido: document.getElementById('modal-contenido'),
   modalCerrar: document.getElementById('modal-cerrar'),
@@ -119,7 +120,14 @@ async function pintarDirectorio() {
     return true;
   });
 
-  el.gridDocentes.innerHTML = vistas.renderGridDocentes(docentesFiltrados);
+  // Disponibles primero; dentro de cada grupo se conserva el orden original
+  // (por id) gracias a que Array.prototype.sort es estable.
+  const docentesOrdenados = [...docentesFiltrados].sort((a, b) => {
+    if (a.disponible === b.disponible) return 0;
+    return a.disponible ? -1 : 1;
+  });
+
+  el.gridDocentes.innerHTML = vistas.renderGridDocentes(docentesOrdenados);
 
   const idDocente = params.get('docente');
   if (idDocente) {
@@ -174,6 +182,7 @@ async function pintarBaseDeIdeas() {
   const ejeSeleccionadoURL = params.get('eje') ?? '';
   const origenSeleccionado = params.get('origen') ?? '';
   const textoBusqueda = (params.get('q') ?? '').trim().toLowerCase();
+  const sinTomadas = params.get('sinTomadas') === '1';
 
   const [ideas, config] = await Promise.all([
     datos.obtenerBaseDeIdeas(),
@@ -189,8 +198,10 @@ async function pintarBaseDeIdeas() {
 
   el.filtroOrigen.value = origenSeleccionado;
   el.buscadorIdeas.value = params.get('q') ?? '';
+  el.filtroSinTomadas.checked = sinTomadas;
 
   const ideasFiltradas = ideas.filter((idea) => {
+    if (sinTomadas && idea.tomada) return false;
     if (areaSeleccionada && idea.area !== areaSeleccionada) return false;
     if (ejeSeleccionado) {
       const coincideEje = idea.eje === ejeSeleccionado || (idea.ejesSecundarios ?? []).includes(ejeSeleccionado);
@@ -329,6 +340,11 @@ function conectarEventos() {
 
   el.filtroOrigen.addEventListener('change', () => {
     actualizarURL({ origen: el.filtroOrigen.value || null }, { reemplazar: true });
+    pintarBaseDeIdeas();
+  });
+
+  el.filtroSinTomadas.addEventListener('change', () => {
+    actualizarURL({ sinTomadas: el.filtroSinTomadas.checked ? '1' : null }, { reemplazar: true });
     pintarBaseDeIdeas();
   });
 

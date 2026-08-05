@@ -56,13 +56,65 @@ function renderCorreo(contacto) {
   `;
 }
 
-/** Tarjeta resumida de un docente para el grid del directorio. */
-export function renderTarjetaDocente(docente) {
+/**
+ * Texto e ícono de la insignia de no disponibilidad según el rol del
+ * docente. Director no depende del conteo de proyectos (ver
+ * `calcularDisponibilidad` en data-service.js), así que su insignia usa un
+ * tono distinto (azul institucional) para señalar que el motivo es
+ * estructural, no de cupo; Profesor y Asistente comparten la familia de
+ * color ámbar por ser ambos casos de cupo lleno, con íconos distintos.
+ */
+const ETIQUETA_DISPONIBILIDAD_POR_ROL = {
+  Director: {
+    clase: 'etiqueta-disponibilidad-director',
+    icono: '🧭',
+    texto: 'Dirección del programa · disponibilidad sujeta a coordinación'
+  },
+  Asistente: {
+    clase: 'etiqueta-disponibilidad-asistente',
+    icono: '🕓',
+    texto: 'Asistente del programa · sin cupo disponible'
+  },
+  Profesor: {
+    clase: '',
+    icono: '🔒',
+    texto: 'Sin cupo para nuevos grupos'
+  }
+};
+
+/**
+ * Insignia de no disponibilidad cuando el docente no está disponible como
+ * asesor: con ícono y peso visual propio, para que sea lo primero que se lea
+ * después del nombre. El contenido varía según `docente.rol`.
+ */
+function renderEtiquetaDisponibilidad(docente) {
+  if (docente.disponible !== false) return '';
+  const config = ETIQUETA_DISPONIBILIDAD_POR_ROL[docente.rol] ?? ETIQUETA_DISPONIBILIDAD_POR_ROL.Profesor;
+  const clases = ['etiqueta-disponibilidad', config.clase].filter(Boolean).join(' ');
   return `
-    <article class="tarjeta tarjeta-docente" data-id="${escapeHTML(docente.id)}" tabindex="0" role="button"
+    <p class="${clases}">
+      <span class="etiqueta-disponibilidad-icono" aria-hidden="true">${config.icono}</span>
+      ${escapeHTML(config.texto)}
+    </p>
+  `;
+}
+
+/**
+ * Tarjeta resumida de un docente para el grid del directorio. Si no está
+ * disponible como asesor (`disponible === false`, derivado en data-service a
+ * partir de sus proyectos no finalizados) se distingue con tres señales
+ * combinadas — franja de color, insignia con ícono, y foto atenuada — pero
+ * sigue siendo completamente funcional: el clic abre el perfil igual que
+ * siempre. El texto nunca se atenúa, para que quede perfectamente legible.
+ */
+export function renderTarjetaDocente(docente) {
+  const claseNoDisponible = docente.disponible === false ? ' tarjeta-docente-no-disponible' : '';
+  return `
+    <article class="tarjeta tarjeta-docente${claseNoDisponible}" data-id="${escapeHTML(docente.id)}" tabindex="0" role="button"
       aria-label="Ver perfil de ${escapeHTML(docente.nombre)}">
       ${renderAvatar(docente)}
       <h3 class="tarjeta-titulo">${escapeHTML(docente.nombre)}</h3>
+      ${renderEtiquetaDisponibilidad(docente)}
       <p class="tarjeta-subtitulo">${escapeHTML(docente.titulos?.[0] ?? '')}</p>
       ${renderCorreo(docente.contacto)}
       <div class="etiquetas">${renderEtiquetas(nombresDeAreas(docente.areas), 'etiqueta-area')}</div>
@@ -89,10 +141,28 @@ function formatearFecha(aaaaMm) {
   return `${nombreMes}. ${anio}`;
 }
 
+/** Texto visible del estado de un proyecto en su insignia. */
+const ETIQUETA_ESTADO_PROYECTO = {
+  propuesta: 'En propuesta',
+  proyecto: 'Activo',
+  finalizado: 'Finalizado'
+};
+
+/** Rango de fechas a mostrar, según la fecha que aplica a cada estado. */
+function rangoDeProyecto(proyecto) {
+  if (proyecto.estado === 'finalizado') {
+    return `${formatearFecha(proyecto.fechaPropuesta)} – ${formatearFecha(proyecto.fechaFin)}`;
+  }
+  if (proyecto.estado === 'proyecto') {
+    return `Desde ${formatearFecha(proyecto.fechaPropuesta)}`;
+  }
+  return `Idea desde ${formatearFecha(proyecto.fechaIdea)}`;
+}
+
 function renderProyecto(proyecto) {
-  const rango = proyecto.estado === 'finalizado'
-    ? `${formatearFecha(proyecto.fechaInicio)} – ${formatearFecha(proyecto.fechaFin)}`
-    : `Desde ${formatearFecha(proyecto.fechaInicio)}`;
+  // "tipo" puede faltar en etapas tempranas (propuesta, o un proyecto cuyo
+  // tipo aún no está decidido): se omite en vez de mostrar un "· " suelto.
+  const meta = [rangoDeProyecto(proyecto), proyecto.tipo].filter(Boolean).join(' · ');
   const etiquetaAreaEje = proyecto.area
     ? `<span class="etiqueta etiqueta-area">${escapeHTML(proyecto.area)}</span><span class="etiqueta etiqueta-eje">${escapeHTML(proyecto.eje)}</span>`
     : '';
@@ -100,25 +170,32 @@ function renderProyecto(proyecto) {
     <li class="proyecto">
       <div>
         <span class="proyecto-titulo">${escapeHTML(proyecto.titulo)}</span>
-        <span class="proyecto-meta">${escapeHTML(rango)} · ${escapeHTML(proyecto.tipo)}</span>
+        <span class="proyecto-meta">${escapeHTML(meta)}</span>
       </div>
       <div class="etiquetas">
-        <span class="etiqueta etiqueta-estado-${escapeHTML(proyecto.estado)}">${proyecto.estado === 'activo' ? 'Activo' : 'Finalizado'}</span>
+        <span class="etiqueta etiqueta-estado-${escapeHTML(proyecto.estado)}">${ETIQUETA_ESTADO_PROYECTO[proyecto.estado] ?? proyecto.estado}</span>
         ${etiquetaAreaEje}
       </div>
     </li>
   `;
 }
 
-/** Agrupa y ordena los proyectos de un docente: finalizados por fechaFin desc., activos por fechaInicio desc. */
+/**
+ * Agrupa y ordena los proyectos de un docente por estado, cada grupo por su
+ * fecha relevante descendente: finalizados por `fechaFin`, en curso
+ * (estado "proyecto") por `fechaPropuesta`, en propuesta por `fechaIdea`.
+ */
 function ordenarProyectos(proyectos) {
   const finalizados = proyectos
     .filter((p) => p.estado === 'finalizado')
     .sort((a, b) => b.fechaFin.localeCompare(a.fechaFin));
-  const activos = proyectos
-    .filter((p) => p.estado === 'activo')
-    .sort((a, b) => b.fechaInicio.localeCompare(a.fechaInicio));
-  return { finalizados, activos };
+  const enProyecto = proyectos
+    .filter((p) => p.estado === 'proyecto')
+    .sort((a, b) => b.fechaPropuesta.localeCompare(a.fechaPropuesta));
+  const enPropuesta = proyectos
+    .filter((p) => p.estado === 'propuesta')
+    .sort((a, b) => b.fechaIdea.localeCompare(a.fechaIdea));
+  return { finalizados, enProyecto, enPropuesta };
 }
 
 function renderListaOMensaje(proyectos, mensajeVacio) {
@@ -149,14 +226,21 @@ function renderGrupoProyectosResumen(titulo, proyectos, mensajeVacio, limite) {
   `;
 }
 
-/** Resumen de proyectos para el perfil: 2 finalizados + 2 activos más recientes, con botón hacia la vista completa. */
+/**
+ * Resumen de proyectos para el perfil: 2 finalizados + 2 en curso más
+ * recientes, con botón hacia la vista completa. Los proyectos en
+ * "propuesta" NO se muestran aquí (solo en "Ver todos los proyectos"); si un
+ * docente solo tiene propuestas, el botón igual aparece para poder verlas.
+ */
 function renderProyectosDocente(proyectos) {
   if (!proyectos || proyectos.length === 0) {
     return '<p class="texto-atenuado">Sin proyectos registrados.</p>';
   }
 
-  const { finalizados, activos } = ordenarProyectos(proyectos);
-  const hayMasProyectos = finalizados.length > LIMITE_PROYECTOS_VISIBLES || activos.length > LIMITE_PROYECTOS_VISIBLES;
+  const { finalizados, enProyecto, enPropuesta } = ordenarProyectos(proyectos);
+  const hayMasProyectos = finalizados.length > LIMITE_PROYECTOS_VISIBLES
+    || enProyecto.length > LIMITE_PROYECTOS_VISIBLES
+    || enPropuesta.length > 0;
   const botonVerTodos = hayMasProyectos
     ? '<button type="button" class="boton-ver-mas" data-accion="ver-todos-proyectos">Ver todos los proyectos</button>'
     : '';
@@ -164,23 +248,29 @@ function renderProyectosDocente(proyectos) {
   return `
     <div class="proyectos-docente">
       ${renderGrupoProyectosResumen('Finalizados', finalizados, 'Sin proyectos finalizados aún.', LIMITE_PROYECTOS_VISIBLES)}
-      ${renderGrupoProyectosResumen('Activos', activos, 'Sin proyectos activos actualmente.', LIMITE_PROYECTOS_VISIBLES)}
+      ${renderGrupoProyectosResumen('Activos', enProyecto, 'Sin proyectos activos actualmente.', LIMITE_PROYECTOS_VISIBLES)}
       ${botonVerTodos}
     </div>
   `;
 }
 
-/** Vista aparte con TODOS los proyectos del docente, separados por estado. */
+/** Vista aparte con TODOS los proyectos del docente, separados por estado (incluye "En propuesta"). */
 export function renderTodosLosProyectos(docente, proyectos) {
-  const { finalizados, activos } = ordenarProyectos(proyectos ?? []);
+  const { finalizados, enProyecto, enPropuesta } = ordenarProyectos(proyectos ?? []);
   return `
     <div class="proyectos-docente-completo">
       <p class="migas-pan">Perfil <span aria-hidden="true">›</span> Todos los proyectos</p>
       <h2 class="proyectos-completo-titulo">Todos los proyectos de ${escapeHTML(docente.nombre)}</h2>
       ${renderGrupoProyectos('Finalizados', finalizados, 'Sin proyectos finalizados aún.')}
-      ${renderGrupoProyectos('Activos', activos, 'Sin proyectos activos actualmente.')}
+      ${renderGrupoProyectos('Activos', enProyecto, 'Sin proyectos activos actualmente.')}
+      ${renderGrupoProyectos('En propuesta', enPropuesta, 'Sin proyectos en propuesta actualmente.')}
     </div>
   `;
+}
+
+/** Insignia "Ya tomada" cuando la idea está en data/ideas-tomadas.json (campo `tomada` derivado). */
+function renderEtiquetaTomada(idea) {
+  return idea.tomada ? '<span class="etiqueta etiqueta-tomada">Ya tomada</span>' : '';
 }
 
 function renderEtiquetasAreaEje(idea) {
@@ -191,15 +281,18 @@ function renderEtiquetasAreaEje(idea) {
     <span class="etiqueta etiqueta-area">${escapeHTML(idea.area)}</span>
     <span class="etiqueta etiqueta-eje">${escapeHTML(idea.eje)}</span>
     ${secundarios}
+    ${renderEtiquetaTomada(idea)}
   `;
 }
 
+/** Idea dentro del perfil del docente. Si ya fue tomada (`idea.tomada`), se muestra atenuada pero íntegra. */
 function renderIdeaDeDocente(idea) {
   const objetivos = idea.objetivos && idea.objetivos.length > 0
     ? `<ul class="idea-objetivos">${idea.objetivos.map((obj) => `<li>${escapeHTML(obj)}</li>`).join('')}</ul>`
     : '';
+  const claseTomada = idea.tomada ? ' idea-tomada' : '';
   return `
-    <li class="idea">
+    <li class="idea${claseTomada}">
       <h4>${escapeHTML(idea.titulo)}</h4>
       <div class="etiquetas">${renderEtiquetasAreaEje(idea)}</div>
       <p>${escapeHTML(idea.descripcion)}</p>
@@ -290,16 +383,18 @@ function truncar(texto, maxCaracteres = 160) {
   return `${texto.slice(0, maxCaracteres).trimEnd()}…`;
 }
 
-/** Tarjeta de una idea (de docente o externa) para la base de ideas. */
+/** Tarjeta de una idea (de docente o externa) para la base de ideas. Si ya fue tomada, se muestra atenuada pero íntegra. */
 export function renderTarjetaIdea(idea) {
+  const claseTomada = idea.tomada ? ' tarjeta-idea-tomada' : '';
   return `
-    <article class="tarjeta tarjeta-idea">
+    <article class="tarjeta tarjeta-idea${claseTomada}">
       <h3 class="tarjeta-titulo">${escapeHTML(idea.titulo)}</h3>
       <p class="tarjeta-extracto">${escapeHTML(truncar(idea.descripcion ?? ''))}</p>
       <div class="etiquetas">
         <span class="etiqueta etiqueta-area">${escapeHTML(idea.area)}</span>
         <span class="etiqueta etiqueta-eje">${escapeHTML(idea.eje)}</span>
         ${renderEtiquetaOrigen(idea.origen)}
+        ${renderEtiquetaTomada(idea)}
       </div>
     </article>
   `;

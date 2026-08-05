@@ -1,0 +1,4 @@
+{
+  "descripcion": "Lista de IDs de ideas de investigación que ya han sido tomadas por un grupo. Incluye tanto ideas de docentes (ej. idea-01-01) como externas (ej. idea-ext-01). Para marcar una idea como tomada, agrega su id a la lista 'tomadas'. Para liberarla, quítalo.",
+  "tomadas": []
+}
