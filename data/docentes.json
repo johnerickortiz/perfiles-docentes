@@ -7,6 +7,7 @@
       "Magíster en Ciberseguridad"
     ],
     "rol": "Director",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -27,6 +28,7 @@
       "Magíster en Administración y Competitividad"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Inteligencia Artificial y Ciencia de Datos",
@@ -46,6 +48,7 @@
       "Magíster en Docencia Universitaria"
     ],
     "rol": "Profesor",
+    "estadoDocente": "inactivo",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -66,6 +69,7 @@
       "Especialista en Redes y Servicios Telemáticos"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -125,6 +129,7 @@
       "Magíster en Dirección Estratégica con Tecnologías de la Información"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -145,6 +150,7 @@
       "Magíster en Ciencias - Física"
     ],
     "rol": "Asistente",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Bioinformática y Modelamiento Computacional",
@@ -171,6 +177,7 @@
       "Magíster en Docencia Universitaria"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -192,6 +199,7 @@
       "Magíster en Docencia Universitaria"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -218,6 +226,7 @@
       "Doctor en Ingeniería Eléctrica"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Bioinformática y Modelamiento Computacional",
@@ -250,6 +259,7 @@
       "Magíster en Pedagogía"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -268,6 +278,7 @@
       "Doctora en Ingeniería Telemática"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Inteligencia Artificial y Ciencia de Datos",
@@ -290,6 +301,7 @@
       "Magíster en Ingeniería Química"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Tecnologías de la Información y Educación en Computación",
@@ -315,6 +327,7 @@
       "Especialista en Ciencia de Datos y Analítica"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -340,6 +353,7 @@
       "Magíster en Computación"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -359,6 +373,7 @@
       "Magíster en Ingeniería Computacional"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -383,6 +398,7 @@
       "Ingeniero de Sistemas"
     ],
     "rol": "Profesor",
+    "estadoDocente": "activo",
     "areas": [
       {
         "area": "Ingeniería de Software",
@@ -393,5 +409,32 @@
     ],
     "ideasInvestigacion": [],
     "contacto": "omaortega226@umariana.edu.co"
+  },
+  {
+    "id": "docente-17",
+    "nombre": "Hector Alfonso Oliva Rojas",
+    "titulos": [
+      "Ingeniero Electrónico",
+      "Magíster en Electrónica"
+    ],
+    "rol": "Profesor",
+    "estadoDocente": "activo",
+    "areas": [
+      {
+        "area": "Tecnologías de la Información y Educación en Computación",
+        "ejes": [
+          "IoT (Internet de las Cosas)"
+        ]
+      },
+      {
+        "area": "Inteligencia Artificial y Ciencia de Datos",
+        "ejes": [
+          "Machine Learning (Aprendizaje automático)",
+          "Computer Vision (Visión por computadora)"
+        ]
+      }
+    ],
+    "ideasInvestigacion": [],
+    "contacto": "hecoliva226@umariana.edu.co"
   }
 ]

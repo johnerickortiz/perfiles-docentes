@@ -100,6 +100,7 @@ por nombre exacto.
   "id": "docente-01",
   "nombre": "Nombre Completo",
   "rol": "Profesor",
+  "estadoDocente": "activo",
   "titulos": ["Ingeniero de Sistemas", "Magíster en..."],
   "areas": [
     { "area": "Ingeniería de Software", "ejes": ["Construcción y Evolución de Software"] },
@@ -124,6 +125,9 @@ por nombre exacto.
   asume `Profesor` (ver `data-service.js`). Determina, junto con
   `proyectosActivos`, la disponibilidad del docente como asesor — ver
   "Disponibilidad del docente" más abajo.
+- `estadoDocente`: `activo` o `inactivo`. Si un docente no lo trae, se asume
+  `activo`. Marca a los docentes que salieron del programa; ver "Docentes
+  inactivos" más abajo para su efecto en el resto del sitio.
 
 ### Proyecto dirigido (data/proyectos.json — array de objetos)
 
@@ -174,6 +178,8 @@ sus proyectos NO finalizados (estado `propuesta` o `proyecto`). Cada docente
 sale de `obtenerDocentes`/`obtenerDocentePorId` con dos campos calculados:
 
 - `proyectosActivos`: cuántos de sus proyectos están en `propuesta` o `proyecto`.
+  Los proyectos cuyo `docenteId` sea un docente **inactivo** no se cuentan
+  para nadie (ver "Docentes inactivos" más abajo).
 - `disponible`: `true`/`false`, según esta regla por `rol`:
   - **Director**: SIEMPRE `false` (no disponible), sin importar el conteo —
     el motivo es estructural (dedicación a la coordinación del programa), no
@@ -186,6 +192,31 @@ En el directorio, los docentes disponibles se listan primero y los no
 disponibles después; dentro de cada grupo se conserva el orden original (por
 `id`). Las tarjetas no disponibles siguen siendo completamente clickeables —
 la disponibilidad es solo informativa, nunca deshabilita el perfil.
+
+### Docentes inactivos (`estadoDocente: "inactivo"`)
+
+Un docente que salió del programa **no se borra** de `docentes.json`: se
+marca `"estadoDocente": "inactivo"` y sus datos (perfil, ideas, proyectos)
+siguen intactos, esperando reasignación. `data-service.js` filtra estos
+docentes en `obtenerDocentes()` — el único punto por el que pasan tanto el
+directorio como la base de ideas — con este efecto en cascada:
+
+- **Directorio**: el docente inactivo no aparece como tarjeta. Si se navega
+  directo a su perfil por URL (`?docente=docente-03`), se comporta igual que
+  un id inexistente (mensaje "No se encontró el docente solicitado").
+- **Base de ideas**: sus ideas de investigación desaparecen de la base
+  combinada, porque esta se arma recorriendo `obtenerDocentes()` (ver
+  `obtenerBaseDeIdeas`).
+- **Proyectos**: siguen existiendo tal cual en `proyectos.json` (no se
+  eliminan ni se reasignan solos), pero no se muestran en ningún lado porque
+  ya no hay perfil desde el cual verlos.
+- **Disponibilidad**: sus proyectos NO finalizados no cuentan para el
+  `proyectosActivos` de ningún docente activo, mientras no se reasignen a
+  otro docente.
+
+Un docente vuelve a aparecer en todo el sitio en cuanto su `estadoDocente`
+vuelve a `activo` (o se quita el campo, ya que el valor por defecto es
+`activo`).
 
 ### Idea externa (data/ideas-externas.json — array de objetos)
 

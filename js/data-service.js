@@ -21,6 +21,9 @@ const TIPOS_PROYECTO = ['investigacion', 'desarrollo'];
 // Rol del docente en el programa; si no viene en los datos, se asume "Profesor".
 const ROL_POR_DEFECTO = 'Profesor';
 
+// Si un docente no trae "estadoDocente", se asume "activo".
+const ESTADO_DOCENTE_POR_DEFECTO = 'activo';
+
 // Umbral de proyectos no finalizados (propuesta o proyecto) a partir del cual
 // un Profesor o Asistente se considera NO disponible como asesor. Un
 // Director está SIEMPRE no disponible, sin importar su conteo (ver
@@ -77,6 +80,15 @@ async function obtenerIdsIdeasTomadas() {
 /** Cuenta los proyectos de un docente que aún no han finalizado (propuesta o proyecto). */
 function contarProyectosNoFinalizados(proyectos, docenteId) {
   return proyectos.filter((p) => p.docenteId === docenteId && p.estado !== 'finalizado').length;
+}
+
+/** ids de docentes con `estadoDocente` "inactivo" (salieron del programa). */
+function idsDocentesInactivos(docentes) {
+  return new Set(
+    docentes
+      .filter((docente) => (docente.estadoDocente ?? ESTADO_DOCENTE_POR_DEFECTO) === 'inactivo')
+      .map((docente) => docente.id)
+  );
 }
 
 /**
@@ -209,13 +221,20 @@ function validarProyecto(proyecto, indiceTaxonomia) {
 }
 
 /**
- * Devuelve todos los docentes, ya validados contra la taxonomía de config.json,
- * con dos campos derivados (no vienen en docentes.json, se calculan aquí):
+ * Devuelve los docentes ACTIVOS (`estadoDocente` distinto de "inactivo"), ya
+ * validados contra la taxonomía de config.json, con dos campos derivados (no
+ * vienen en docentes.json, se calculan aquí):
  *   - `proyectosActivos`: cuántos de sus proyectos NO están finalizados.
  *   - `disponible`: según su `rol` y `proyectosActivos` (ver `calcularDisponibilidad`).
  * `rol` se normaliza a `ROL_POR_DEFECTO` si el docente no lo trae. Cada idea
  * de investigación del docente también viene anotada con `tomada` (ver
  * `obtenerIdsIdeasTomadas`).
+ *
+ * Los docentes inactivos NO se borran de docentes.json ni se pierden sus
+ * datos: solo se excluyen de este resultado (y por lo tanto del directorio y
+ * de la base de ideas, que se construyen a partir de él). Sus proyectos
+ * siguen intactos en proyectos.json esperando reasignación, y no cuentan
+ * para la disponibilidad de ningún docente activo mientras eso no ocurra.
  */
 export async function obtenerDocentes() {
   if (!cacheDocentes) {
@@ -225,14 +244,20 @@ export async function obtenerDocentes() {
       obtenerProyectos(),
       obtenerIdsIdeasTomadas()
     ]);
-    cacheDocentes = datos
-      .filter((docente) => validarDocente(docente, indiceTaxonomia))
+
+    const docentesValidos = datos.filter((docente) => validarDocente(docente, indiceTaxonomia));
+    const idsInactivos = idsDocentesInactivos(docentesValidos);
+    const proyectosDeActivos = proyectos.filter((proyecto) => !idsInactivos.has(proyecto.docenteId));
+
+    cacheDocentes = docentesValidos
+      .filter((docente) => !idsInactivos.has(docente.id))
       .map((docente) => {
         const rol = docente.rol ?? ROL_POR_DEFECTO;
-        const proyectosActivos = contarProyectosNoFinalizados(proyectos, docente.id);
+        const proyectosActivos = contarProyectosNoFinalizados(proyectosDeActivos, docente.id);
         return {
           ...docente,
           rol,
+          estadoDocente: docente.estadoDocente ?? ESTADO_DOCENTE_POR_DEFECTO,
           ideasInvestigacion: (docente.ideasInvestigacion ?? [])
             .filter((idea) => validarIdea(idea, indiceTaxonomia))
             .map((idea) => ({ ...idea, tomada: idsIdeasTomadas.has(idea.id) })),

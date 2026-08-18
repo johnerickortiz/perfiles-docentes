@@ -186,11 +186,15 @@ def build(wb, area_to_ejes):
         rol = clean(row[4]) or "Profesor"   # columna E; por defecto Profesor
         if rol not in ("Profesor", "Asistente", "Director"):
             errors.append(f"Docentes fila {r}: rol inválido {rol!r} (debe ser 'Profesor', 'Asistente' o 'Director').")
+        estado_docente = clean(row[5]) or "activo"   # columna F; por defecto activo
+        if estado_docente not in ("activo", "inactivo"):
+            errors.append(f"Docentes fila {r}: estadoDocente inválido {estado_docente!r} (debe ser 'activo' o 'inactivo').")
         docentes[did] = {
             "id": did,
             "nombre": nombre,
             "titulos": split_list(row[2]),
             "rol": rol,
+            "estadoDocente": estado_docente,
             "areas": [],                 # se llena desde 'Areas docente'
             "ideasInvestigacion": [],    # se llena desde 'Ideas docentes'
             "contacto": clean(row[3]),
