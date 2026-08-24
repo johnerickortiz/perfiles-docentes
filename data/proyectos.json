@@ -248,7 +248,7 @@
   },
   {
     "id": "proy-0022",
-    "docenteId": "docente-03",
+    "docenteId": "docente-17",
     "titulo": "Modelo para la gestión de proyectos bajo el estándar del PMBOK en el contexto de las microempresas en el municipio de San Juan de Pasto",
     "estado": "proyecto",
     "fechaIdea": "2022-01",
@@ -259,7 +259,7 @@
   },
   {
     "id": "proy-0023",
-    "docenteId": "docente-03",
+    "docenteId": "docente-17",
     "titulo": "Estrategia basada en OVA’s para el fortalecimiento de los conceptos básicos de álgebra y geometría en estudiantes de primer semestre del programa de Ingeniería de Sistemas de la Universidad Mariana",
     "estado": "proyecto",
     "fechaIdea": "2024-01",
@@ -281,7 +281,7 @@
   },
   {
     "id": "proy-0025",
-    "docenteId": "docente-03",
+    "docenteId": "docente-17",
     "titulo": "Diseño de un software de mantenimiento preventivo con un sistema de alertas y OT para la gestión de activos para la empresa Tecnologías Hospitalarias e Industriales S.A.S",
     "estado": "proyecto",
     "fechaIdea": "2025-05",
@@ -292,7 +292,7 @@
   },
   {
     "id": "proy-0026",
-    "docenteId": "docente-03",
+    "docenteId": "docente-17",
     "titulo": "Diseño de una estrategia pedagógica para fortalecer las competencias digitales en estudiantes de grado 10 y 11 de Tumaco",
     "estado": "proyecto",
     "fechaIdea": "2025-10",
@@ -303,7 +303,7 @@
   },
   {
     "id": "proy-0027",
-    "docenteId": "docente-03",
+    "docenteId": "docente-09",
     "titulo": "Rutas de aprendizaje orientadas por la IA en el área de matemáticas en las zonas rurales de Pasto, Nariño",
     "estado": "proyecto",
     "fechaIdea": "2025-10",
@@ -1467,7 +1467,7 @@
   },
   {
     "id": "proy-130",
-    "docenteId": "docente-03",
+    "docenteId": "docente-17",
     "titulo": "Desarrollo de un sistema académico para la gestión de comunicación y seguimiento del rendimiento estudiantil para la empresa Soluciones Educativas",
     "estado": "propuesta",
     "fechaIdea": "2026-04",
