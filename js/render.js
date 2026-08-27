@@ -312,17 +312,35 @@ function renderAreaConEjes(entradaArea) {
 
 const ASUNTO_CONTACTO_POR_DEFECTO = 'Consulta sobre asesoría de proyecto de grado';
 
-/** Botón "Escribir a [nombre]" con mailto:. Si el docente no tiene correo, se muestra desactivado en vez de abrir un correo vacío. */
+/**
+ * URL de "compose" de Gmail: abre el redactor de Gmail directamente en el
+ * navegador (sin depender de una app de correo instalada como Outlook, que
+ * en la práctica los estudiantes no usan).
+ */
+function construirUrlGmail(destinatario, asunto) {
+  const parametros = new URLSearchParams({ view: 'cm', fs: '1', to: destinatario, su: asunto });
+  return `https://mail.google.com/mail/?${parametros.toString()}`;
+}
+
+/**
+ * Botón "Enviar correo a [nombre]" que abre el redactor de Gmail en una
+ * pestaña nueva. Si el docente no tiene correo, se muestra desactivado en
+ * vez de abrir un redactor vacío.
+ */
 function renderBotonContacto(docente) {
   const contacto = docente.contacto?.trim();
-  const nombrePila = docente.nombre.split(' ')[0];
 
   if (!contacto) {
     return `<span class="boton boton-primario boton-deshabilitado" aria-disabled="true">Sin correo de contacto</span>`;
   }
 
-  const asunto = encodeURIComponent(ASUNTO_CONTACTO_POR_DEFECTO);
-  return `<a href="mailto:${escapeHTML(contacto)}?subject=${asunto}" class="boton boton-primario">Escribir a ${escapeHTML(nombrePila)}</a>`;
+  const urlGmail = construirUrlGmail(contacto, ASUNTO_CONTACTO_POR_DEFECTO);
+  return `
+    <a href="${escapeHTML(urlGmail)}" class="boton boton-primario" target="_blank" rel="noopener">
+      Enviar correo a ${escapeHTML(docente.nombre)}
+    </a>
+    <p class="contacto-nota">Se abre en una pestaña nueva de Gmail.</p>
+  `;
 }
 
 /** Contenido completo del modal de perfil de un docente. `proyectos` viene ya resuelto (join hecho por app.js). */
