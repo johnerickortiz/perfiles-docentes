@@ -206,9 +206,10 @@
     "id": "proy-0018",
     "docenteId": "docente-02",
     "titulo": "Sistema de Visión por Computadora para Observación y Diagnóstico de la Técnica de Golpe con Antebrazos en Semilleros de la Universidad Mariana",
-    "estado": "proyecto",
+    "estado": "finalizado",
     "fechaIdea": "2024-01",
     "fechaPropuesta": "2024-11",
+    "fechaFin": "2026-08",
     "tipo": "investigacion",
     "area": "Inteligencia Artificial y Ciencia de Datos",
     "eje": "Computer Vision (Visión por computadora)"
@@ -272,9 +273,10 @@
     "id": "proy-0024",
     "docenteId": "docente-03",
     "titulo": "Técnicas de Inteligencia Artificial para Soporte en el Diagnóstico de Cáncer de Cuello Uterino.",
-    "estado": "proyecto",
+    "estado": "finalizado",
     "fechaIdea": "2024-02",
     "fechaPropuesta": "2025-05",
+    "fechaFin": "2026-08",
     "tipo": "investigacion",
     "area": "Inteligencia Artificial y Ciencia de Datos",
     "eje": "Machine Learning (Aprendizaje automático)"
@@ -978,9 +980,10 @@
     "id": "proy-0085",
     "docenteId": "docente-09",
     "titulo": "Implementación de un entorno de trabajo computacional para el modelamiento del problema directo del Electrocardiograma",
-    "estado": "proyecto",
+    "estado": "finalizado",
     "fechaIdea": "2024-01",
     "fechaPropuesta": "2024-10",
+    "fechaFin": "2026-09",
     "tipo": "investigacion",
     "area": "Bioinformática y Modelamiento Computacional",
     "eje": "Modelamiento de sistemas biológicos"
@@ -1524,5 +1527,96 @@
     "tipo": null,
     "area": "Tecnologías de la Información y Educación en Computación",
     "eje": "TIC aplicadas a la educación"
+  },
+  {
+    "id": "proy-0136",
+    "docenteId": "docente-05",
+    "titulo": "Desarrollo de un prototipo de software para la síntesis y visualización triaxial de pseudo-sismogramas del subsuelo en Nariño, Colombia.",
+    "estado": "proyecto",
+    "fechaIdea": "2025-03",
+    "fechaPropuesta": "2025-10",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "Gestión de sistemas de información"
+  },
+  {
+    "id": "proy-0137",
+    "docenteId": "docente-13",
+    "titulo": "Sistema Digital de Fidelización para la Tienda Oh... Lalá Boutique del municipio de la Cruz Nariño",
+    "estado": "propuesta",
+    "fechaIdea": "2026-02",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "Gestión de sistemas de información"
+  },
+  {
+    "id": "proy-0138",
+    "docenteId": "docente-15",
+    "titulo": "Risk - Reconocimiento e identificación de Superficies Kilométricas",
+    "estado": "propuesta",
+    "fechaIdea": "2026-08",
+    "tipo": null,
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Computer Vision (Visión por computadora)"
+  },
+  {
+    "id": "proy-0139",
+    "docenteId": "docente-08",
+    "titulo": "Recuperando y desatando la lengua Pasto-Cuastu a través de las tecnologías de información con los y las guaguas de la Institución Educativa Técnico Agropecuaria San Diego",
+    "estado": "propuesta",
+    "fechaIdea": "2026-08",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "TIC aplicadas a la educación"
+  },
+  {
+    "id": "proy-0140",
+    "docenteId": "docente-04",
+    "titulo": "Diseño e implementación de una solución en transferencia segura de archivos de Fintech con tecnología GoAnyWhere MFT",
+    "estado": "propuesta",
+    "fechaIdea": "2026-08",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "Gestión de sistemas de información"
+  },
+  {
+    "id": "proy-0141",
+    "docenteId": "docente-16",
+    "titulo": "Desarrollo de software para mitigar dificultades en la administración del inventario en las MiPYMEs en Pasto",
+    "estado": "propuesta",
+    "fechaIdea": "2026-08",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "TIC aplicadas a la educación"
+  },
+  {
+    "id": "proy-0142",
+    "docenteId": "docente-04",
+    "titulo": "Modelo predictivo para la detección temprana de alteraciones de la salud en ganado bovino mediante datos de temperatura y frecuencia cardiaca recolectados con tecnología NFC",
+    "estado": "propuesta",
+    "fechaIdea": "2026-09",
+    "tipo": null,
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Machine Learning (Aprendizaje automático)"
+  },
+  {
+    "id": "proy-0143",
+    "docenteId": "docente-12",
+    "titulo": "Aplicación Web accesible basada en Lengua de Señas Colombiana (LSC) para facilitar la consulta de información y disponibilidad de medicamentos, así como la comunicación entre personas sordas usuarios de LSC y el personal de farmacia en la ciudad de Pasto",
+    "estado": "propuesta",
+    "fechaIdea": "2026-08",
+    "tipo": null,
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Computer Vision (Visión por computadora)"
+  },
+  {
+    "id": "proy-0144",
+    "docenteId": "docente-04",
+    "titulo": "Sistema de análisis académico capaz de detectar riesgos de bajo desempeño y generar alertas preventivas para los docentes de los grados noveno",
+    "estado": "propuesta",
+    "fechaIdea": "2026-09",
+    "tipo": null,
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Machine Learning (Aprendizaje automático)"
   }
 ]
