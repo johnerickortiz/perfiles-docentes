@@ -182,7 +182,7 @@
   {
     "id": "proy-0016",
     "docenteId": "docente-02",
-    "titulo": "Estrategia tecnológica para la gestión de la información del Encuentro Institucional de Semilleros de Invesigación de la Universidad Mariana V2",
+    "titulo": "Estrategia tecnológica para la gestión de la información del Encuentro Institucional de Semilleros de Investigación de la Universidad Mariana II",
     "estado": "proyecto",
     "fechaIdea": "2023-01",
     "fechaPropuesta": "2024-05",
@@ -261,7 +261,7 @@
   {
     "id": "proy-0023",
     "docenteId": "docente-17",
-    "titulo": "Estrategia basada en OVA’s para el fortalecimiento de los conceptos básicos de álgebra y geometría en estudiantes de primer semestre del programa de Ingeniería de Sistemas de la Universidad Mariana",
+    "titulo": "Estrategia basada en OVA para el fortalecimiento de los conceptos básicos de álgebra y geometría en estudiantes de primer semestre del programa de Ingeniería de Sistemas de la Universidad Mariana",
     "estado": "proyecto",
     "fechaIdea": "2024-01",
     "fechaPropuesta": "2024-08",
@@ -529,7 +529,7 @@
   {
     "id": "proy-0046",
     "docenteId": "docente-05",
-    "titulo": "Sistema de apoyo para bienestar de la población migrante en transito por la ciudad de Pasto",
+    "titulo": "Estrategia computacional para facilitar el acceso a servicios esenciales a migrantes en tránsito en la Ciudad de Pasto",
     "estado": "proyecto",
     "fechaIdea": "2024-08",
     "fechaPropuesta": "2025-05",
@@ -551,7 +551,7 @@
   {
     "id": "proy-0048",
     "docenteId": "docente-05",
-    "titulo": "Desarrollo de un simulador triaxial de ondas sísmicas con parámetros geotécnicos y sismológicos de Nariño, Colombia",
+    "titulo": "Desarrollo de un prototipo de software para la síntesis y visualización triaxial de pseudo-sismogramas del subsuelo en Nariño, Colombia.",
     "estado": "proyecto",
     "fechaIdea": "2025-03",
     "fechaPropuesta": "2025-10",
@@ -608,10 +608,11 @@
   {
     "id": "proy-0053",
     "docenteId": "docente-06",
-    "titulo": "Ecosistema Científico de Nariño: Exploración y Categorización de Estudios",
-    "estado": "proyecto",
+    "titulo": "Ecosistema Científico de Nariño: Exploración y categorización de estudios científicos y gubernamentales en el periodo 2020-2024.",
+    "estado": "finalizado",
     "fechaIdea": "2024-01",
     "fechaPropuesta": "2024-11",
+    "fechaFin": "2026-10",
     "tipo": "investigacion",
     "area": "Tecnologías de la Información y Educación en Computación",
     "eje": "Gestión de sistemas de información"
@@ -901,7 +902,7 @@
   {
     "id": "proy-0078",
     "docenteId": "docente-08",
-    "titulo": "Prototipo de plataforma digital para la gestión integral del servicio social obligatorio en instituciones educativas de San Juan de Pasto",
+    "titulo": "Prototipo de plataforma digital para la gestión integral del servicio social obligatorio: estudio piloto de caso en el Instituto Bet-el de San Juan de Pasto",
     "estado": "proyecto",
     "fechaIdea": "2024-08",
     "fechaPropuesta": "2025-05",
@@ -912,7 +913,7 @@
   {
     "id": "proy-0079",
     "docenteId": "docente-08",
-    "titulo": "Desarrollo de un sistema inteligente que fomenta hábitos saludables y reducción el sedentarismo en trabajadores de oficina y estudiantes",
+    "titulo": "Desarrollo de un aplicativo móvil que fomenta hábitos saludables y reducción del sedentarismo en trabajadores de oficina.",
     "estado": "proyecto",
     "fechaIdea": "2024-08",
     "fechaPropuesta": "2025-05",
@@ -1115,7 +1116,7 @@
   },
   {
     "id": "proy-0097",
-    "docenteId": "docente-10",
+    "docenteId": "docente-17",
     "titulo": "Juego serio digital para fortalecer la comprensión pragmático-comunicativa y la identidad cultural en estudiantes de la lengua Inga de la Institución Educativa Agropecuaria Inga de Aponte",
     "estado": "proyecto",
     "fechaIdea": "2025-10",
@@ -1205,7 +1206,7 @@
   {
     "id": "proy-0105",
     "docenteId": "docente-13",
-    "titulo": "Desarrollo de una plataforma web e-comerce para la optimización de los servicios de la empresa Cootranar de Pasto - Nariño",
+    "titulo": "Implementación de una plataforma web e-commerce para la modernización de los servicios operativos de la empresa Cootranar de Pasto – Nariño",
     "estado": "proyecto",
     "fechaIdea": "2025-02",
     "fechaPropuesta": "2025-09",
@@ -1239,7 +1240,7 @@
   {
     "id": "proy-0108",
     "docenteId": "docente-15",
-    "titulo": "Estrategia de gamificación para el aprendizaje de las funciones de variable real en estudiantes del programa de Ingeniería de Sistemas de la Universidad Mariana",
+    "titulo": "Estrategia de gamificación para el aprendizaje de cálculo diferencial aplicado a funciones de variable real en estudiantes del programa de Ingeniería de Sistemas de la Universidad Mariana.",
     "estado": "proyecto",
     "fechaIdea": "2023-01",
     "fechaPropuesta": "2023-12",
@@ -1274,7 +1275,7 @@
   {
     "id": "proy-0111",
     "docenteId": "docente-15",
-    "titulo": "Impacto del uso de redes sociales en el sentimiento de soledad: Caso de estudio estudiantes de grados 8º, 9º y 10º del colegio Ciudad De Pasto del año 2024.",
+    "titulo": "Impacto del uso de redes sociales en el sentimiento de soledad: Caso de estudio estudiantes de grados 8º, 9º y 10º del colegio Ciudad de Pasto año 2024-2026.",
     "estado": "proyecto",
     "fechaIdea": "2024-01",
     "fechaPropuesta": "2024-11",
@@ -1297,7 +1298,7 @@
   {
     "id": "proy-0113",
     "docenteId": "docente-15",
-    "titulo": "Impacto de la Inteligencia Artificial Generativa en los Procesos de Enseñanza en Educación Media de la Institución Educativa Municipal Pedagógico de la Ciudad de Pasto",
+    "titulo": "Inteligencia Artificial Generativa en la planeación de los procesos de enseñanza de docentes de educación básica secundaria y media de la Institución Educativa Municipal Pedagógico de Pasto durante el período 2025-2026",
     "estado": "proyecto",
     "fechaIdea": "2024-01",
     "fechaPropuesta": "2024-11",
@@ -1308,7 +1309,7 @@
   {
     "id": "proy-0114",
     "docenteId": "docente-15",
-    "titulo": "E-Lexis: Plataforma para diagnosticar problemas de escritura en niños usando técnicas de Machine Learning",
+    "titulo": "E-Lexis: Estrategia Tecnológica en Habilidades Escritas para Población Escolar de la Ciudad de San Juan de Pasto",
     "estado": "proyecto",
     "fechaIdea": "2024-10",
     "fechaPropuesta": "2025-05",
@@ -1351,7 +1352,7 @@
   {
     "id": "proy-118",
     "docenteId": "docente-05",
-    "titulo": "SARKA: Plataforma de aprendizaje personalizado para el desarrollo de lógica de programación",
+    "titulo": "Estrategia computacional para la evaluación de competencias profesorales en las Universidades de Pasto.",
     "estado": "propuesta",
     "fechaIdea": "2026-02",
     "tipo": null,
@@ -1361,7 +1362,7 @@
   {
     "id": "proy-119",
     "docenteId": "docente-15",
-    "titulo": "Aplicativo móvil para la enseñanza de lógica de programación en una Institución Educativa de la ciudad de San Juan de Pasto",
+    "titulo": "Aplicación Móvil basada en el Modelo de Aprendizaje de Duolingo para Fortalecer el Pensamiento Algorítmico en Estudiantes de Educación Eedia de la Institución Educativa Divino Niño Jesús de Cumbal, Nariño",
     "estado": "propuesta",
     "fechaIdea": "2026-02",
     "tipo": null,
@@ -1371,7 +1372,7 @@
   {
     "id": "proy-120",
     "docenteId": "docente-13",
-    "titulo": "WorkPilot",
+    "titulo": "Desarrollo de un sistema web para la gestión y seguimiento de propuestas comerciales y contratos en CompuConta Software Asesores S.A.S.",
     "estado": "propuesta",
     "fechaIdea": "2026-02",
     "tipo": null,
@@ -1401,7 +1402,7 @@
   {
     "id": "proy-123",
     "docenteId": "docente-13",
-    "titulo": "Sistema de detección de plagas para forraje de pasto kikuyo",
+    "titulo": "Estimación de la condición corporal (BCS) de vacas Holstein en lactancia mediante visión por computador en fincas de La Cruz, Nariño.",
     "estado": "propuesta",
     "fechaIdea": "2026-02",
     "tipo": null,
@@ -1421,7 +1422,7 @@
   {
     "id": "proy-125",
     "docenteId": "docente-13",
-    "titulo": "Prototipo de un sistema modular que integra inteligencia artificial para apoyar la inclusión de personas con discapacidad auditiva en entornos educativos",
+    "titulo": "Inteligencia artificial como apoyo a la comunicación y el acceso a la información de estudiantes con discapacidad auditiva en entornos educativos.",
     "estado": "propuesta",
     "fechaIdea": "2026-03",
     "tipo": null,
@@ -1431,7 +1432,7 @@
   {
     "id": "proy-126",
     "docenteId": "docente-05",
-    "titulo": "Plataforma crowfounding para el apoyo estudiantil en el programa de Ingeniería de Sistemas",
+    "titulo": "Estrategia de crowdfunding educativo mediada por una plataforma web para apoyar el ingreso y la permanencia estudiantil en el programa de Ingeniería de Sistemas de la Universidad Mariana.",
     "estado": "propuesta",
     "fechaIdea": "2026-03",
     "tipo": null,
@@ -1441,7 +1442,7 @@
   {
     "id": "proy-127",
     "docenteId": "docente-14",
-    "titulo": "Sistema para la gestión de permisos para estudiantes, profesores y administrativos en el programa de Ingeniería de Sistemas",
+    "titulo": "Sistema de gestión de permisos para estudiantes del programa de ingeniería de sistemas.",
     "estado": "propuesta",
     "fechaIdea": "2026-03",
     "tipo": null,
@@ -1451,12 +1452,12 @@
   {
     "id": "proy-128",
     "docenteId": "docente-14",
-    "titulo": "Nomofobia en los estudiantes de la Escuela de Colombia",
+    "titulo": "Plataforma web basada en aprendizaje automático para la clasificación temprana del riesgo de la nomofobia a partir del cuestionario NMP-Q y datos de uso verificados del smartphone en estudiantes de Ingeniería de Sistemas de la Universidad Mariana.",
     "estado": "propuesta",
     "fechaIdea": "2026-04",
     "tipo": null,
-    "area": "Tecnologías de la Información y Educación en Computación",
-    "eje": "TIC aplicadas a la educación"
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Machine Learning (Aprendizaje automático)"
   },
   {
     "id": "proy-129",
@@ -1471,7 +1472,7 @@
   {
     "id": "proy-130",
     "docenteId": "docente-17",
-    "titulo": "Desarrollo de un sistema académico para la gestión de comunicación y seguimiento del rendimiento estudiantil para la empresa Soluciones Educativas",
+    "titulo": "Desarrollo de un sistema académico para la gestión de comunicación y seguimiento del rendimiento estudiantil para la Institución Educativa Liceo Santa Teresita de Pasto.",
     "estado": "propuesta",
     "fechaIdea": "2026-04",
     "tipo": null,
@@ -1481,22 +1482,22 @@
   {
     "id": "proy-131",
     "docenteId": "docente-14",
-    "titulo": "Sistema de monitoreo productivo de rendimiento académico",
+    "titulo": "Sistema inteligente para la identificación de tendencias y áreas temáticas poco exploradas en trabajos de grado del programa de Ingeniería de Sistemas de la Universidad Mariana mediante técnicas de procesamiento de lenguaje natural.",
     "estado": "propuesta",
     "fechaIdea": "2026-05",
     "tipo": null,
-    "area": "Tecnologías de la Información y Educación en Computación",
-    "eje": "TIC aplicadas a la educación"
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Cognitive Computing (Sistemas cognitivos)"
   },
   {
     "id": "proy-132",
     "docenteId": "docente-07",
-    "titulo": "Sistema Web turístico para el municipio de Sandoná, Nariño",
+    "titulo": "Medición de la productividad de equipos de desarrollo de software desde una perspectiva multifactorial en el contexto de uso de la GenAI",
     "estado": "propuesta",
     "fechaIdea": "2025-10",
     "tipo": null,
     "area": "Ingeniería de Software",
-    "eje": "Construcción y Evolución de Software"
+    "eje": "Medición, Métricas y Productividad en Software"
   },
   {
     "id": "proy-133",
@@ -1511,7 +1512,7 @@
   {
     "id": "proy-0134",
     "docenteId": "docente-16",
-    "titulo": "Plataforma digital interactiva para el Fortalecimiento de Competencias en Estudiantes de la Escuela Normal Superior Pío XII de Pupiales",
+    "titulo": "Plataforma interactiva para el fortalecimiento de la orientación vocacional en estudiantes de grado 10° y 11° de la Escuela Normal Superior Pío XII de Pupiales, basada en el modelo RIASEC y estrategias de gamificación.",
     "estado": "propuesta",
     "fechaIdea": "2026-04",
     "tipo": null,
@@ -1521,7 +1522,7 @@
   {
     "id": "proy-0135",
     "docenteId": "docente-16",
-    "titulo": "Desarrollo de un videojuego para la enseñanza de historia",
+    "titulo": "Uso de gamificación para el fortalecimiento de la identidad histórica en estudiantes de educación media en la ciudad de Pasto.",
     "estado": "propuesta",
     "fechaIdea": "2026-05",
     "tipo": null,
@@ -1535,16 +1536,6 @@
     "estado": "proyecto",
     "fechaIdea": "2025-03",
     "fechaPropuesta": "2025-10",
-    "tipo": null,
-    "area": "Tecnologías de la Información y Educación en Computación",
-    "eje": "Gestión de sistemas de información"
-  },
-  {
-    "id": "proy-0137",
-    "docenteId": "docente-13",
-    "titulo": "Sistema Digital de Fidelización para la Tienda Oh... Lalá Boutique del municipio de la Cruz Nariño",
-    "estado": "propuesta",
-    "fechaIdea": "2026-02",
     "tipo": null,
     "area": "Tecnologías de la Información y Educación en Computación",
     "eje": "Gestión de sistemas de información"
@@ -1618,5 +1609,46 @@
     "tipo": null,
     "area": "Inteligencia Artificial y Ciencia de Datos",
     "eje": "Machine Learning (Aprendizaje automático)"
+  },
+  {
+    "id": "proy-0145",
+    "docenteId": "docente-10",
+    "titulo": "Juego serio digital para fortalecer la comprensión lectora en estudiantes de octavo grado de la Institución Educativa José Antonio Galán de Iles, Nariño",
+    "estado": "proyecto",
+    "fechaIdea": "2025-10",
+    "fechaPropuesta": "2026-04",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "TIC aplicadas a la educación"
+  },
+  {
+    "id": "proy-0146",
+    "docenteId": "docente-07",
+    "titulo": "Estrategia de gamificación para la reducción de la complejidad en la medición multifactorial de la productividad en equipos de desarrollo de software",
+    "estado": "propuesta",
+    "fechaIdea": "2026-09",
+    "tipo": null,
+    "area": "Ingeniería de Software",
+    "eje": "Medición, Métricas y Productividad en Software"
+  },
+  {
+    "id": "proy-0147",
+    "docenteId": "docente-16",
+    "titulo": "Desarrollo de una plataforma virtual interactiva para fortalecer el aprendizaje en el curso de Hidráulica de Ingeniería Civil",
+    "estado": "propuesta",
+    "fechaIdea": "2026-11",
+    "tipo": null,
+    "area": "Tecnologías de la Información y Educación en Computación",
+    "eje": "TIC aplicadas a la educación"
+  },
+  {
+    "id": "proy-0148",
+    "docenteId": "docente-14",
+    "titulo": "Sistema MultiDetección de enfermedades de Cultivo de aguacate en Nariño \"SIDEAGRO-N”",
+    "estado": "propuesta",
+    "fechaIdea": "2026-11",
+    "tipo": null,
+    "area": "Inteligencia Artificial y Ciencia de Datos",
+    "eje": "Computer Vision (Visión por computadora)"
   }
 ]

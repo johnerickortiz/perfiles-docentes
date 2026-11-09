@@ -16,3 +16,6 @@ desktop.ini
 img/_originales/
 
 # data/, CLAUDE.md, tools/ y el Excel de datos SÍ se versionan (ver CLAUDE.md)
+
+# Matriz cruda de proyectos (contiene datos personales de estudiantes) - no publicar
+MatrizProyectos/
